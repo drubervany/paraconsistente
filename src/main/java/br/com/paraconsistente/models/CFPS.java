@@ -1,8 +1,6 @@
 package br.com.paraconsistente.models;
 
-public class CFPS {
-
-    private Especialista especialista;
+public class CFPS extends AbstractIdName {
 
     private Projeto projeto;
 
@@ -10,15 +8,11 @@ public class CFPS {
 
     private Medicao medicao;
 
-    public CFPS(Especialista especialista, Projeto projeto, Integer numeroPontos, Medicao medicao) {
-        this.especialista = especialista;
+    public CFPS(Integer id, String nome, Projeto projeto, Integer numeroPontos, Medicao medicao) {
+        super(id, nome);
         this.projeto = projeto;
         this.numeroPontos = numeroPontos;
         this.medicao = medicao;
-    }
-
-    public Especialista getEspecialista() {
-        return especialista;
     }
 
     public Projeto getProjeto() {
