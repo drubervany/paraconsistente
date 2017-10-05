@@ -84,4 +84,28 @@ public class Medicao {
         return cfps;
     }
 
+    public void verificarComplexidade() {
+
+    }
+
+    public void calcularALI() {
+
+    }
+
+    public void calcularAIE() {
+
+    }
+
+    public void calcularCE() {
+
+    }
+
+    public void calcularEE() {
+
+    }
+
+    public void calcularSE() {
+
+    }
+
 }

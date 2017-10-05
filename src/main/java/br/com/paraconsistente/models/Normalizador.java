@@ -51,4 +51,16 @@ public class Normalizador {
         return maximoGrauDesfavoravel;
     }
 
+    public void calcularBaricentro() {
+
+    }
+
+    public void calcularMinimo() {
+
+    }
+
+    public void calcularMaximo() {
+
+    }
+
 }

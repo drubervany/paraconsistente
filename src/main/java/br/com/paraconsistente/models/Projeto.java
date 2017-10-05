@@ -4,13 +4,13 @@ import java.util.Date;
 
 public class Projeto extends AbstractIdName {
 
-    private GerenteProjeto gerenteProjeto;
+    private final GerenteProjeto gerenteProjeto;
 
-    private Cliente cliente;
+    private final Cliente cliente;
 
-    private String descricao;
+    private final String descricao;
 
-    private Date dataInicio;
+    private final Date dataInicio;
 
     private Date dataFim;
 
@@ -18,16 +18,14 @@ public class Projeto extends AbstractIdName {
 
     private Medicao mediacao;
 
-    public Projeto(Integer id, GerenteProjeto gerenteProjeto, String nome, Cliente cliente, String descricao, Date dataInicio, Date dataFim,
-            Integer pontosFuncao, Medicao mediacao) {
+    private EnumStatusProjeto status;
+
+    public Projeto(Integer id, GerenteProjeto gerenteProjeto, String nome, Cliente cliente, String descricao, Date dataInicio) {
         super(id, nome);
         this.gerenteProjeto = gerenteProjeto;
         this.cliente = cliente;
         this.descricao = descricao;
         this.dataInicio = dataInicio;
-        this.dataFim = dataFim;
-        this.pontosFuncao = pontosFuncao;
-        this.mediacao = mediacao;
     }
 
     public GerenteProjeto getGerenteProjeto() {
@@ -56,6 +54,14 @@ public class Projeto extends AbstractIdName {
 
     public Medicao getMediacao() {
         return mediacao;
+    }
+
+    public EnumStatusProjeto getStatus() {
+        return status;
+    }
+
+    public void checarIdMedicao() {
+
     }
 
 }

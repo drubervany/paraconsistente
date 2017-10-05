@@ -27,4 +27,7 @@ public class CFPS extends AbstractDadosPessoais {
         return medicao;
     }
 
+    public void checkOu() {
+
+    }
 }

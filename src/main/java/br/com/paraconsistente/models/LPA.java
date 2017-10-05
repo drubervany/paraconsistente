@@ -43,4 +43,40 @@ public class LPA {
         return grauCerteza;
     }
 
+    public void calcular1() {
+    }
+
+    public void calcular2() {
+    }
+
+    public void calcular3() {
+    }
+
+    public void calcular4() {
+    }
+
+    public void calcular5() {
+    }
+
+    public void calcular6() {
+    }
+
+    public void calcular7() {
+    }
+
+    public void calcular8() {
+    }
+
+    public void calcular9() {
+    }
+
+    public void calcular10() {
+    }
+
+    public void calcular11() {
+    }
+
+    public void calcular12() {
+    }
+
 }

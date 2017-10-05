@@ -6,4 +6,12 @@ public class GerenteProjeto extends AbstractDadosPessoais {
         super(id, nome, cpf, email);
     }
 
+    public void tomarDecisao() {
+
+    }
+
+    public void checkIn() {
+
+    }
+
 }
