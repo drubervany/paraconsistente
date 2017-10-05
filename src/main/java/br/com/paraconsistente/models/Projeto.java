@@ -2,13 +2,9 @@ package br.com.paraconsistente.models;
 
 import java.util.Date;
 
-public class Projeto {
-
-    private Integer id;
+public class Projeto extends AbstractIdName {
 
     private GerenteProjeto gerenteProjeto;
-
-    private String nome;
 
     private Cliente cliente;
 
@@ -24,10 +20,8 @@ public class Projeto {
 
     public Projeto(Integer id, GerenteProjeto gerenteProjeto, String nome, Cliente cliente, String descricao, Date dataInicio, Date dataFim,
             Integer pontosFuncao, Medicao mediacao) {
-        super();
-        this.id = id;
+        super(id, nome);
         this.gerenteProjeto = gerenteProjeto;
-        this.nome = nome;
         this.cliente = cliente;
         this.descricao = descricao;
         this.dataInicio = dataInicio;
@@ -36,16 +30,8 @@ public class Projeto {
         this.mediacao = mediacao;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
     public GerenteProjeto getGerenteProjeto() {
         return gerenteProjeto;
-    }
-
-    public String getNome() {
-        return nome;
     }
 
     public Cliente getCliente() {

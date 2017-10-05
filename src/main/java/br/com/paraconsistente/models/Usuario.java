@@ -1,12 +1,8 @@
 package br.com.paraconsistente.models;
 
-public class Usuario {
-
-    private Integer id;
+public class Usuario extends AbstractIdName {
 
     private Cargo cargo;
-
-    private String nome;
 
     private Long cpf;
 
@@ -15,25 +11,15 @@ public class Usuario {
     private String email;
 
     public Usuario(Integer id, Cargo cargo, String nome, Long cpf, String senha, String email) {
-        super();
-        this.id = id;
+        super(id, nome);
         this.cargo = cargo;
-        this.nome = nome;
         this.cpf = cpf;
         this.senha = senha;
         this.email = email;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
     public Cargo getCargo() {
         return cargo;
-    }
-
-    public String getNome() {
-        return nome;
     }
 
     public Long getCpf() {

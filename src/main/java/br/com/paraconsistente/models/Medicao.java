@@ -22,11 +22,11 @@ public class Medicao {
 
     private Projeto projeto;
 
-    private Especialista especialista;
+    private CFPS cfps;
 
     public Medicao(Integer id, Integer ali, Integer aie, Integer ce, Integer ee, Integer se, String tiposDado, String tiposRegistro,
-            String arquivoReferenciado, Projeto projeto, Especialista especialista) {
-        super();
+            String arquivoReferenciado, Projeto projeto, CFPS cfps) {
+
         this.id = id;
         this.ali = ali;
         this.aie = aie;
@@ -37,7 +37,7 @@ public class Medicao {
         this.tiposRegistro = tiposRegistro;
         this.arquivoReferenciado = arquivoReferenciado;
         this.projeto = projeto;
-        this.especialista = especialista;
+        this.cfps = cfps;
     }
 
     public Integer getId() {
@@ -80,8 +80,8 @@ public class Medicao {
         return projeto;
     }
 
-    public Especialista getEspecialista() {
-        return especialista;
+    public CFPS getCfps() {
+        return cfps;
     }
 
 }
