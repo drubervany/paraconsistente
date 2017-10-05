@@ -6,7 +6,9 @@
       Dado que exista o  gerente de projeto "<nome>", "<cpf>" e "<email>"
       E o gerente inicia o cadastro do projeto
 	  | nome | descricao| dataInicio | dataFim |            
-      Entao faz a tomada de decisao
+	  E o gerente contrata os especialistas
+	  | nome | descricao| dataInicio | dataFim |
+      Entao faz a analise da medição e a tomada de decisao
    
 	Exemplos: 
 		| nome   |cpf 			| email				   |
