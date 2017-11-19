@@ -1,5 +1,45 @@
 # Application information
-server.port: 8080
+server:
+  port: 8080
+  contextPath: /SpringBootMainApplication
+
+##Test
+#spring:
+#  profiles: local, default
+#datasource:
+#  sampleapp:
+#    url: jdbc:h2:~/test
+#    username: SA
+#    password:
+#    driverClassName: org.h2.Driver
+#    defaultSchema:
+#    maxPoolSize: 10
+#    hibernate:
+#      hbm2ddl.method: create-drop
+#      show_sql: true
+#      format_sql: true
+#      dialect: org.hibernate.dialect.H2Dialect
+      
+#Prod
+spring:
+  profiles: local, default
+datasource:
+  sampleapp:
+    url: jdbc:mysql://mycfpsapf.mysql.dbaas.com.br:3306/mycfpsapf
+    username: mycfpsapf
+    password: apf@109
+    driverClassName: com.mysql.jdbc.Driver
+    defaultSchema:
+    maxPoolSize: 20
+    tomcat:
+      testWhileIdle: true
+      timeBetweenEvictionRunsMillis: 60000
+      validationQuery: SELECT 1
+    hibernate:
+      hbm2ddl.method: create-drop #update
+      show_sql: true
+      format_sql: true
+      dialect: org.hibernate.dialect.MySQLDialect
 
 # Logging properties
 logging.file: measurementService.log

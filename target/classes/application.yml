@@ -1,5 +1,45 @@
 # Application information
-server.port: 8080
+server:
+  port: 8080
+  contextPath: /SpringBootMainApplication
+
+##Test
+#spring:
+#  profiles: local, default
+#datasource:
+#  sampleapp:
+#    url: jdbc:h2:~/test
+#    username: SA
+#    password:
+#    driverClassName: org.h2.Driver
+#    defaultSchema:
+#    maxPoolSize: 10
+#    hibernate:
+#      hbm2ddl.method: create-drop
+#      show_sql: true
+#      format_sql: true
+#      dialect: org.hibernate.dialect.H2Dialect
+      
+#Prod
+spring:
+  profiles: local, default
+datasource:
+  sampleapp:
+    url: jdbc:mysql://mycfpsapf.mysql.dbaas.com.br:3306/mycfpsapf
+    username: mycfpsapf
+    password: apf@109
+    driverClassName: com.mysql.jdbc.Driver
+    defaultSchema:
+    maxPoolSize: 20
+    tomcat:
+      testWhileIdle: true
+      timeBetweenEvictionRunsMillis: 60000
+      validationQuery: SELECT 1
+    hibernate:
+      hbm2ddl.method: create-drop #update
+      show_sql: true
+      format_sql: true
+      dialect: org.hibernate.dialect.MySQLDialect
 
 # Logging properties
 logging.file: measurementService.log
@@ -7,46 +47,7 @@ server.tomcat.basedir: target/tomcat
 server.tomcat.access_log_enabled: true
 server.tomcat.access_log_pattern: '%h %t "%r" %s %b'
 
-# management/monitoring endpoints
-management.address: 127.0.0.1
-management.port: 8081
-shell.ssh.enabled: false
-shell.telnet.enabled: false
-spring.jmx.enabled: true
-endpoints.health.sensitive: false
-
 # Version & debug information
-info.app.name: MeasurementService
-info.app.description: This application provides storage and retrieval of time-series data
+info.app.name: Paraconsistente
+info.app.description: Testar o software de paraconsistente do Prof. Luiz
 info.app.version: 1.0
-
-# Configure which management endpoints are enabled
-endpoints.enabled: false
-endpoints.info.enabled: true
-endpoints.metrics.enabled: true
-endpoints.health.enabled: true
-endpoints.logfile.enabled: true
-endpoints.trace.enabled: true
-endpoints.dump.enabled: false
-endpoints.shutdown.enabled: false
-endpoints.beans.enabled: false
-endpoints.autoconfig.enabled: false
-endpoints.configprops.enabled: false
-endpoints.mappings.enabled: false
-
-security.require_ssl: false
-http.mappers.json_pretty_print: true
-
-# Http connection properties
-# connectTimeout: 2000
-# socketTimeout: 2000
-
-# Influx DB connection properties
-# influx.address: 52.36.18.150
-# influx.port: 8086
-# influx.username: root
-# influx.password: root
-
-# spring.redis.host: ec2-52-24-194-61.us-west-2.compute.amazonaws.com
-#spring.redis.password: secret
-# spring.redis.port: 6379
