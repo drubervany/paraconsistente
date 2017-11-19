@@ -7,7 +7,7 @@ import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
-import fr.aoufi.springboot.model.Gerente;
+import br.com.paraconsistente.model.Gerente;
 
 public class GerenteTesteSteps {
 
