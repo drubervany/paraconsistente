@@ -14,8 +14,11 @@ public class GerenteTesteSteps {
 	@Dado("^que exista o  gerente de projeto \"([^\"]*)\", \"([^\"]*)\" e \"([^\"]*)\"$")
 	public void que_exista_o_gerente_de_projeto_e(String nome, String cpf, String email) throws Throwable {
 
-		Gerente gerente = new Gerente(nome, cpf, email);
-
+		Gerente gerente = new Gerente();
+		gerente.setCpf(cpf);
+		gerente.setEmail(email);
+		gerente.setNome(nome);
+		
 		assertNotNull(gerente);
 		assertEquals(gerente.getNome(), nome);
 		assertEquals(gerente.getCpf(), cpf);
