@@ -7769,3 +7769,826 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'clien
 2017-11-19 19:55:43.022  INFO 181476 --- [http-nio-8080-exec-2] f.a.s.c.RestApiProjetoController         : Fetching Projeto with id 1
 2017-11-19 19:55:47.763  INFO 181476 --- [http-nio-8080-exec-7] f.a.s.c.RestApiProjetoController         : Creating Projeto : br.com.paraconsistente.model.Projeto@46faf725
 2017-11-19 19:55:50.314  INFO 181476 --- [http-nio-8080-exec-3] f.a.s.c.RestApiProjetoController         : Fetching Projeto with id 1
+2017-11-19 20:02:07.755  INFO 181476 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-11-19 20:02:07.757  INFO 181476 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75db5df9: startup date [Sun Nov 19 19:38:28 BRST 2017]; root of context hierarchy
+2017-11-19 20:02:07.766  INFO 181476 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-11-19 20:02:07.767  INFO 181476 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2017-11-19 20:02:07.780  INFO 181476 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-11-19 20:02:07.782  INFO 181476 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2017-11-19 20:02:09.146  INFO 181476 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2017-11-19 20:02:09.155  INFO 181476 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Close initiated...
+2017-11-19 20:02:09.163  INFO 181476 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Closed.
+2017-11-19 20:02:16.676  INFO 158608 --- [main] b.c.p.SpringBootMainApplication          : Starting SpringBootMainApplication on PC-DRUBERVANY with PID 158608 (D:\projetos\paraconsistente\target\classes started by DRUBERVANY in D:\projetos\paraconsistente)
+2017-11-19 20:02:16.691  INFO 158608 --- [main] b.c.p.SpringBootMainApplication          : No active profile set, falling back to default profiles: default
+2017-11-19 20:02:17.065  INFO 158608 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75db5df9: startup date [Sun Nov 19 20:02:17 BRST 2017]; root of context hierarchy
+2017-11-19 20:02:25.135  INFO 158608 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-11-19 20:02:25.189  INFO 158608 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-19 20:02:25.194  INFO 158608 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-19 20:02:25.845  INFO 158608 --- [localhost-startStop-1] o.a.c.c.C.[.[.[/paraconsistente]         : Initializing Spring embedded WebApplicationContext
+2017-11-19 20:02:25.847  INFO 158608 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 8797 ms
+2017-11-19 20:02:26.660  INFO 158608 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-19 20:02:26.685  INFO 158608 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-19 20:02:27.473  INFO 158608 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-11-19 20:02:27.566  INFO 158608 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-11-19 20:02:27.947  INFO 158608 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2017-11-19 20:02:27.954  INFO 158608 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-11-19 20:02:27.960  INFO 158608 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-11-19 20:02:28.138  INFO 158608 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-11-19 20:02:28.713  INFO 158608 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Started.
+2017-11-19 20:02:30.775  INFO 158608 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-19 20:02:32.256  INFO 158608 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:02:33.555  INFO 158608 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:02:33.560  INFO 158608 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:02:33.582  INFO 158608 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:02:33.583  INFO 158608 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:02:34.181  INFO 158608 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2017-11-19 20:02:34.270 ERROR 158608 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO drop foreign key FK95ppokh1htrd92jh2pe92k7tk
+2017-11-19 20:02:34.271 ERROR 158608 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.PROJETO' doesn't exist
+2017-11-19 20:02:34.321 ERROR 158608 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO drop foreign key FKtgfw5frbxkqummr3rvlbvnrof
+2017-11-19 20:02:34.330 ERROR 158608 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.PROJETO' doesn't exist
+2017-11-19 20:02:34.349 ERROR 158608 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO drop foreign key FKphn4uompi8j1lhvbh0ibbrgx7
+2017-11-19 20:02:34.350 ERROR 158608 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.PROJETO' doesn't exist
+2017-11-19 20:02:34.366 ERROR 158608 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO_CFPS drop foreign key FKdk60y9pkdbhyl2qu0so6gg0d9
+2017-11-19 20:02:34.367 ERROR 158608 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.PROJETO_CFPS' doesn't exist
+2017-11-19 20:02:34.381 ERROR 158608 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO_CFPS drop foreign key FK3a4ef54d9a1kqicduhd5drkm1
+2017-11-19 20:02:34.382 ERROR 158608 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.PROJETO_CFPS' doesn't exist
+2017-11-19 20:02:34.397 ERROR 158608 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table USUARIO drop foreign key FKro68mnop4bsidjkbd394no2g8
+2017-11-19 20:02:34.398 ERROR 158608 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.USUARIO' doesn't exist
+2017-11-19 20:02:35.939  INFO 158608 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000476: Executing import script '/import.sql'
+2017-11-19 20:02:36.358  INFO 158608 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2017-11-19 20:02:36.508  INFO 158608 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:02:36.509  INFO 158608 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:02:36.510  INFO 158608 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:02:36.545  INFO 158608 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-11-19 20:02:39.295  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto java.lang.String br.com.paraconsistente.controller.ApplicationController.home(org.springframework.ui.ModelMap)
+2017-11-19 20:02:39.299  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/partials/{page}]}" onto java.lang.String br.com.paraconsistente.controller.ApplicationController.partialHandler(java.lang.String)
+2017-11-19 20:02:39.316  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiCFPSController.getCFPS(long)
+2017-11-19 20:02:39.319  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiCFPSController.createCFPS(br.com.paraconsistente.model.CFPS,org.springframework.web.util.UriComponentsBuilder)
+2017-11-19 20:02:39.322  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiCFPSController.updateCFPS(long,br.com.paraconsistente.model.CFPS)
+2017-11-19 20:02:39.324  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiCFPSController.deleteCFPS(long)
+2017-11-19 20:02:39.326  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.paraconsistente.model.CFPS> br.com.paraconsistente.controller.RestApiCFPSController.deleteAllCFPSs()
+2017-11-19 20:02:39.328  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.paraconsistente.model.CFPS>> br.com.paraconsistente.controller.RestApiCFPSController.listAllCFPSs()
+2017-11-19 20:02:39.342  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.paraconsistente.model.Cliente>> br.com.paraconsistente.controller.RestApiClienteController.listAllClientes()
+2017-11-19 20:02:39.345  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/cnpj/{cnpj}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiClienteController.getCliente(java.lang.String)
+2017-11-19 20:02:39.347  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiClienteController.getCliente(long)
+2017-11-19 20:02:39.348  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiClienteController.createCliente(br.com.paraconsistente.model.Cliente,org.springframework.web.util.UriComponentsBuilder)
+2017-11-19 20:02:39.350  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiClienteController.updateCliente(long,br.com.paraconsistente.model.Cliente)
+2017-11-19 20:02:39.353  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiClienteController.deleteCliente(long)
+2017-11-19 20:02:39.355  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.paraconsistente.model.Cliente> br.com.paraconsistente.controller.RestApiClienteController.deleteAllClientes()
+2017-11-19 20:02:39.381  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiEnterpriseController.getEnterprise(long)
+2017-11-19 20:02:39.383  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiEnterpriseController.createEnterprise(br.com.paraconsistente.model.Enterprise,org.springframework.web.util.UriComponentsBuilder)
+2017-11-19 20:02:39.385  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiEnterpriseController.updateEnterprise(long,br.com.paraconsistente.model.Enterprise)
+2017-11-19 20:02:39.387  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiEnterpriseController.deleteEnterprise(long)
+2017-11-19 20:02:39.388  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.paraconsistente.model.Enterprise>> br.com.paraconsistente.controller.RestApiEnterpriseController.listAllEnterprises()
+2017-11-19 20:02:39.390  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.paraconsistente.model.Enterprise> br.com.paraconsistente.controller.RestApiEnterpriseController.deleteAllEnterprises()
+2017-11-19 20:02:39.400  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.paraconsistente.model.Projeto>> br.com.paraconsistente.controller.RestApiProjetoController.listAllProjetos()
+2017-11-19 20:02:39.404  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiProjetoController.getProjeto(long)
+2017-11-19 20:02:39.406  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiProjetoController.createProjeto(br.com.paraconsistente.model.Projeto,org.springframework.web.util.UriComponentsBuilder)
+2017-11-19 20:02:39.408  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiProjetoController.updateProjeto(long,br.com.paraconsistente.model.Projeto)
+2017-11-19 20:02:39.410  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiProjetoController.deleteProjeto(long)
+2017-11-19 20:02:39.411  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.paraconsistente.model.Projeto> br.com.paraconsistente.controller.RestApiProjetoController.deleteAllProjetos()
+2017-11-19 20:02:39.420  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.paraconsistente.model.Usuario>> br.com.paraconsistente.controller.RestApiUsuarioController.listAllUsuarios()
+2017-11-19 20:02:39.422  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/{email}/{senha}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiUsuarioController.getUsuario(java.lang.String,java.lang.String)
+2017-11-19 20:02:39.424  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiUsuarioController.getUsuario(long)
+2017-11-19 20:02:39.426  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiUsuarioController.createUsuario(br.com.paraconsistente.model.Usuario,org.springframework.web.util.UriComponentsBuilder)
+2017-11-19 20:02:39.428  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiUsuarioController.updateUsuario(long,br.com.paraconsistente.model.Usuario)
+2017-11-19 20:02:39.430  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiUsuarioController.deleteUsuario(long)
+2017-11-19 20:02:39.431  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.paraconsistente.model.Usuario> br.com.paraconsistente.controller.RestApiUsuarioController.deleteAllUsuarios()
+2017-11-19 20:02:39.451  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-19 20:02:39.454  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-19 20:02:39.863  INFO 158608 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75db5df9: startup date [Sun Nov 19 20:02:17 BRST 2017]; root of context hierarchy
+2017-11-19 20:02:42.102  INFO 158608 --- [main] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75db5df9: startup date [Sun Nov 19 20:02:17 BRST 2017]; root of context hierarchy] and template loader path [classpath:/templates/]
+2017-11-19 20:02:42.108  INFO 158608 --- [main] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2017-11-19 20:02:42.288  WARN 158608 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2017-11-19 20:02:42.965  INFO 158608 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-19 20:02:42.970  INFO 158608 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-11-19 20:02:42.996  INFO 158608 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-11-19 20:02:43.231  INFO 158608 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-11-19 20:02:43.260  INFO 158608 --- [main] b.c.p.SpringBootMainApplication          : Started SpringBootMainApplication in 28.132 seconds (JVM running for 31.623)
+2017-11-19 20:02:48.076  INFO 158608 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/paraconsistente]         : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-19 20:02:48.078  INFO 158608 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-19 20:02:48.180  INFO 158608 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 101 ms
+2017-11-19 20:02:48.888  INFO 158608 --- [http-nio-8080-exec-1] b.c.p.c.RestApiProjetoController         : Creating Projeto : br.com.paraconsistente.model.Projeto@12e63f27
+2017-11-19 20:02:49.031  INFO 158608 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-11-19 20:04:38.216  INFO 158608 --- [http-nio-8080-exec-3] b.c.p.c.RestApiUsuarioController         : Fetching Usuario with id teste@teste.com.br e 123456
+2017-11-19 20:04:40.933  INFO 158608 --- [http-nio-8080-exec-5] b.c.p.c.RestApiProjetoController         : Fetching Projeto with id 1
+2017-11-19 20:04:51.283  INFO 158608 --- [http-nio-8080-exec-6] b.c.p.c.RestApiProjetoController         : Fetching Projeto with id 1
+2017-11-19 20:05:03.373  INFO 158608 --- [http-nio-8080-exec-8] b.c.p.c.RestApiProjetoController         : Fetching Projeto with id 1
+2017-11-19 20:06:33.313  INFO 158608 --- [http-nio-8080-exec-7] b.c.p.c.RestApiUsuarioController         : Fetching Usuario with id teste@teste.com.br e 123456
+2017-11-19 20:06:41.150  INFO 158608 --- [http-nio-8080-exec-1] b.c.p.c.RestApiProjetoController         : Fetching Projeto with id 1
+2017-11-19 20:06:47.624  INFO 158608 --- [http-nio-8080-exec-2] b.c.p.c.RestApiClienteController         : Fetching Cliente with id 45578205000197
+2017-11-19 20:06:56.592  INFO 158608 --- [http-nio-8080-exec-3] b.c.p.c.RestApiClienteController         : Fetching Cliente with id 45578205000197
+2017-11-19 20:08:16.654  INFO 158608 --- [http-nio-8080-exec-5] b.c.p.c.RestApiUsuarioController         : Fetching Usuario with id teste@teste.com.br e 123456
+2017-11-19 20:08:39.789  INFO 158608 --- [http-nio-8080-exec-8] b.c.p.c.RestApiClienteController         : Fetching Cliente with id 45578205000197
+2017-11-19 20:11:46.255  INFO 158608 --- [http-nio-8080-exec-1] b.c.p.c.RestApiProjetoController         : Creating Projeto : br.com.paraconsistente.model.Projeto@7b644ef8
+2017-11-19 20:11:46.734  WARN 158608 --- [http-nio-8080-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1062, SQLState: 23000
+2017-11-19 20:11:46.734 ERROR 158608 --- [http-nio-8080-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry '1' for key 'UK_77kenijue31q9wawyxupdv7ro'
+2017-11-19 20:11:46.737  INFO 158608 --- [http-nio-8080-exec-1] o.h.e.j.b.internal.AbstractBatchImpl     : HHH000010: On release of batch it still contained JDBC statements
+2017-11-19 20:11:46.789 ERROR 158608 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/paraconsistente] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'UK_77kenijue31q9wawyxupdv7ro'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:935)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2487)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2013)
+	at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5104)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1998)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:204)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:45)
+	at org.hibernate.persister.collection.AbstractCollectionPersister.recreate(AbstractCollectionPersister.java:1319)
+	at org.hibernate.action.internal.CollectionRecreateAction.execute(CollectionRecreateAction.java:50)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:582)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:456)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:337)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65)
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:504)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy102.saveProjeto(Unknown Source)
+	at br.com.paraconsistente.controller.RestApiProjetoController.createProjeto(RestApiProjetoController.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+
+2017-11-19 20:13:50.539  INFO 158608 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-11-19 20:13:50.540  INFO 158608 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75db5df9: startup date [Sun Nov 19 20:02:17 BRST 2017]; root of context hierarchy
+2017-11-19 20:13:50.589  INFO 158608 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-11-19 20:13:50.590  INFO 158608 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2017-11-19 20:13:50.634  INFO 158608 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-11-19 20:13:50.636  INFO 158608 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2017-11-19 20:13:51.979  INFO 158608 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2017-11-19 20:13:51.983  INFO 158608 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Close initiated...
+2017-11-19 20:13:52.005  INFO 158608 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Closed.
+2017-11-19 20:13:58.872  INFO 186756 --- [main] b.c.p.SpringBootMainApplication          : Starting SpringBootMainApplication on PC-DRUBERVANY with PID 186756 (D:\projetos\paraconsistente\target\classes started by DRUBERVANY in D:\projetos\paraconsistente)
+2017-11-19 20:13:58.889  INFO 186756 --- [main] b.c.p.SpringBootMainApplication          : No active profile set, falling back to default profiles: default
+2017-11-19 20:14:00.111  INFO 186756 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75db5df9: startup date [Sun Nov 19 20:14:00 BRST 2017]; root of context hierarchy
+2017-11-19 20:14:09.201  INFO 186756 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-11-19 20:14:09.279  INFO 186756 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-19 20:14:09.285  INFO 186756 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-19 20:14:09.893  INFO 186756 --- [localhost-startStop-1] o.a.c.c.C.[.[.[/paraconsistente]         : Initializing Spring embedded WebApplicationContext
+2017-11-19 20:14:09.895  INFO 186756 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 9802 ms
+2017-11-19 20:14:10.682  INFO 186756 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-19 20:14:10.700  INFO 186756 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-19 20:14:11.573  INFO 186756 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-11-19 20:14:11.657  INFO 186756 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-11-19 20:14:12.012  INFO 186756 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2017-11-19 20:14:12.018  INFO 186756 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-11-19 20:14:12.027  INFO 186756 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-11-19 20:14:12.214  INFO 186756 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-11-19 20:14:12.761  INFO 186756 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Started.
+2017-11-19 20:14:14.890  INFO 186756 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-19 20:14:16.235  INFO 186756 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:14:17.628  INFO 186756 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:14:17.634  INFO 186756 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:14:17.656  INFO 186756 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:14:17.658  INFO 186756 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:14:18.266  INFO 186756 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2017-11-19 20:14:18.360 ERROR 186756 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO drop foreign key FK95ppokh1htrd92jh2pe92k7tk
+2017-11-19 20:14:18.363 ERROR 186756 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.PROJETO' doesn't exist
+2017-11-19 20:14:18.392 ERROR 186756 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO drop foreign key FKtgfw5frbxkqummr3rvlbvnrof
+2017-11-19 20:14:18.394 ERROR 186756 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.PROJETO' doesn't exist
+2017-11-19 20:14:18.415 ERROR 186756 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO drop foreign key FKphn4uompi8j1lhvbh0ibbrgx7
+2017-11-19 20:14:18.418 ERROR 186756 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.PROJETO' doesn't exist
+2017-11-19 20:14:18.439 ERROR 186756 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO_CFPS drop foreign key FKdk60y9pkdbhyl2qu0so6gg0d9
+2017-11-19 20:14:18.440 ERROR 186756 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.PROJETO_CFPS' doesn't exist
+2017-11-19 20:14:18.457 ERROR 186756 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO_CFPS drop foreign key FK3a4ef54d9a1kqicduhd5drkm1
+2017-11-19 20:14:18.458 ERROR 186756 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.PROJETO_CFPS' doesn't exist
+2017-11-19 20:14:18.472 ERROR 186756 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table USUARIO drop foreign key FKro68mnop4bsidjkbd394no2g8
+2017-11-19 20:14:18.473 ERROR 186756 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.USUARIO' doesn't exist
+2017-11-19 20:14:20.514  INFO 186756 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000476: Executing import script '/import.sql'
+2017-11-19 20:14:20.821  INFO 186756 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2017-11-19 20:14:20.975  INFO 186756 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:14:20.976  INFO 186756 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:14:20.978  INFO 186756 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:14:21.016  INFO 186756 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-11-19 20:14:23.870  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto java.lang.String br.com.paraconsistente.controller.ApplicationController.home(org.springframework.ui.ModelMap)
+2017-11-19 20:14:23.875  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/partials/{page}]}" onto java.lang.String br.com.paraconsistente.controller.ApplicationController.partialHandler(java.lang.String)
+2017-11-19 20:14:23.892  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.paraconsistente.model.CFPS>> br.com.paraconsistente.controller.RestApiCFPSController.listAllCFPSs()
+2017-11-19 20:14:23.894  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiCFPSController.getCFPS(long)
+2017-11-19 20:14:23.896  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiCFPSController.createCFPS(br.com.paraconsistente.model.CFPS,org.springframework.web.util.UriComponentsBuilder)
+2017-11-19 20:14:23.898  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiCFPSController.updateCFPS(long,br.com.paraconsistente.model.CFPS)
+2017-11-19 20:14:23.900  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiCFPSController.deleteCFPS(long)
+2017-11-19 20:14:23.901  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.paraconsistente.model.CFPS> br.com.paraconsistente.controller.RestApiCFPSController.deleteAllCFPSs()
+2017-11-19 20:14:23.914  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.paraconsistente.model.Cliente> br.com.paraconsistente.controller.RestApiClienteController.deleteAllClientes()
+2017-11-19 20:14:23.916  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.paraconsistente.model.Cliente>> br.com.paraconsistente.controller.RestApiClienteController.listAllClientes()
+2017-11-19 20:14:23.918  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/cnpj/{cnpj}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiClienteController.getCliente(java.lang.String)
+2017-11-19 20:14:23.920  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiClienteController.getCliente(long)
+2017-11-19 20:14:23.922  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiClienteController.createCliente(br.com.paraconsistente.model.Cliente,org.springframework.web.util.UriComponentsBuilder)
+2017-11-19 20:14:23.924  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiClienteController.updateCliente(long,br.com.paraconsistente.model.Cliente)
+2017-11-19 20:14:23.926  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiClienteController.deleteCliente(long)
+2017-11-19 20:14:23.960  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.paraconsistente.model.Enterprise>> br.com.paraconsistente.controller.RestApiEnterpriseController.listAllEnterprises()
+2017-11-19 20:14:23.962  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.paraconsistente.model.Enterprise> br.com.paraconsistente.controller.RestApiEnterpriseController.deleteAllEnterprises()
+2017-11-19 20:14:23.963  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiEnterpriseController.getEnterprise(long)
+2017-11-19 20:14:23.965  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiEnterpriseController.createEnterprise(br.com.paraconsistente.model.Enterprise,org.springframework.web.util.UriComponentsBuilder)
+2017-11-19 20:14:23.967  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiEnterpriseController.updateEnterprise(long,br.com.paraconsistente.model.Enterprise)
+2017-11-19 20:14:23.969  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiEnterpriseController.deleteEnterprise(long)
+2017-11-19 20:14:23.981  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.paraconsistente.model.Projeto> br.com.paraconsistente.controller.RestApiProjetoController.deleteAllProjetos()
+2017-11-19 20:14:23.984  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.paraconsistente.model.Projeto>> br.com.paraconsistente.controller.RestApiProjetoController.listAllProjetos()
+2017-11-19 20:14:23.986  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiProjetoController.getProjeto(long)
+2017-11-19 20:14:23.988  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiProjetoController.createProjeto(br.com.paraconsistente.model.Projeto,org.springframework.web.util.UriComponentsBuilder)
+2017-11-19 20:14:23.990  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiProjetoController.updateProjeto(long,br.com.paraconsistente.model.Projeto)
+2017-11-19 20:14:23.993  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiProjetoController.deleteProjeto(long)
+2017-11-19 20:14:24.009  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.paraconsistente.model.Usuario> br.com.paraconsistente.controller.RestApiUsuarioController.deleteAllUsuarios()
+2017-11-19 20:14:24.011  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.paraconsistente.model.Usuario>> br.com.paraconsistente.controller.RestApiUsuarioController.listAllUsuarios()
+2017-11-19 20:14:24.016  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/{email}/{senha}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiUsuarioController.getUsuario(java.lang.String,java.lang.String)
+2017-11-19 20:14:24.018  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiUsuarioController.getUsuario(long)
+2017-11-19 20:14:24.025  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiUsuarioController.createUsuario(br.com.paraconsistente.model.Usuario,org.springframework.web.util.UriComponentsBuilder)
+2017-11-19 20:14:24.035  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiUsuarioController.updateUsuario(long,br.com.paraconsistente.model.Usuario)
+2017-11-19 20:14:24.039  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiUsuarioController.deleteUsuario(long)
+2017-11-19 20:14:24.057  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-19 20:14:24.060  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-19 20:14:24.466  INFO 186756 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75db5df9: startup date [Sun Nov 19 20:14:00 BRST 2017]; root of context hierarchy
+2017-11-19 20:14:26.620  INFO 186756 --- [main] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75db5df9: startup date [Sun Nov 19 20:14:00 BRST 2017]; root of context hierarchy] and template loader path [classpath:/templates/]
+2017-11-19 20:14:26.626  INFO 186756 --- [main] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2017-11-19 20:14:26.772  WARN 186756 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2017-11-19 20:14:27.356  INFO 186756 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-19 20:14:27.360  INFO 186756 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-11-19 20:14:27.385  INFO 186756 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-11-19 20:14:27.656  INFO 186756 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-11-19 20:14:27.678  INFO 186756 --- [main] b.c.p.SpringBootMainApplication          : Started SpringBootMainApplication in 30.912 seconds (JVM running for 35.124)
+2017-11-19 20:15:02.552  INFO 186756 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/paraconsistente]         : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-19 20:15:02.553  INFO 186756 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-19 20:15:02.643  INFO 186756 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 89 ms
+2017-11-19 20:15:03.225  INFO 186756 --- [http-nio-8080-exec-1] b.c.p.c.RestApiProjetoController         : Creating Projeto : br.com.paraconsistente.model.Projeto@1a53cd23
+2017-11-19 20:15:03.624  INFO 186756 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-11-19 20:15:11.865  INFO 186756 --- [http-nio-8080-exec-2] b.c.p.c.RestApiProjetoController         : Fetching Projeto with id 1
+2017-11-19 20:15:31.265  INFO 186756 --- [http-nio-8080-exec-3] b.c.p.c.RestApiClienteController         : Fetching Cliente with id 45578205000197
+2017-11-19 20:21:13.976  INFO 186756 --- [http-nio-8080-exec-7] b.c.p.c.RestApiProjetoController         : Fetching Projeto with id 2
+2017-11-19 20:21:14.974  WARN 186756 --- [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1146, SQLState: 42S02
+2017-11-19 20:21:14.975 ERROR 186756 --- [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : Table 'mycfpsapf.CLIENTE' doesn't exist
+2017-11-19 20:21:14.979  INFO 186756 --- [http-nio-8080-exec-7] o.h.e.internal.DefaultLoadEventListener  : HHH000327: Error performing load command : org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-11-19 20:21:15.178 ERROR 186756 --- [http-nio-8080-exec-7] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/paraconsistente] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet] with root cause
+
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'mycfpsapf.CLIENTE' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:943)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2487)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1966)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:70)
+	at org.hibernate.loader.plan.exec.internal.AbstractLoadPlanBasedLoader.getResultSet(AbstractLoadPlanBasedLoader.java:434)
+	at org.hibernate.loader.plan.exec.internal.AbstractLoadPlanBasedLoader.executeQueryStatement(AbstractLoadPlanBasedLoader.java:186)
+	at org.hibernate.loader.plan.exec.internal.AbstractLoadPlanBasedLoader.executeLoad(AbstractLoadPlanBasedLoader.java:121)
+	at org.hibernate.loader.plan.exec.internal.AbstractLoadPlanBasedLoader.executeLoad(AbstractLoadPlanBasedLoader.java:86)
+	at org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader.load(AbstractLoadPlanBasedEntityLoader.java:167)
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:4019)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:508)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:478)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:219)
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:278)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:121)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:89)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:1129)
+	at org.hibernate.internal.SessionImpl.access$2600(SessionImpl.java:164)
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.load(SessionImpl.java:2696)
+	at org.hibernate.internal.SessionImpl.get(SessionImpl.java:975)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.find(AbstractEntityManagerImpl.java:1075)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.find(AbstractEntityManagerImpl.java:1039)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:347)
+	at com.sun.proxy.$Proxy92.find(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:298)
+	at com.sun.proxy.$Proxy92.find(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findOne(SimpleJpaRepository.java:241)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.executeMethodOn(RepositoryFactorySupport.java:504)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:489)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:461)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:133)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy101.findOne(Unknown Source)
+	at br.com.paraconsistente.service.impl.ProjetoServiceImpl.findById(ProjetoServiceImpl.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy102.findById(Unknown Source)
+	at br.com.paraconsistente.controller.RestApiProjetoController.getProjeto(RestApiProjetoController.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+
+2017-11-19 20:21:20.895  INFO 186756 --- [http-nio-8080-exec-8] b.c.p.c.RestApiProjetoController         : Fetching Projeto with id 1
+2017-11-19 20:21:20.958  WARN 186756 --- [http-nio-8080-exec-8] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1146, SQLState: 42S02
+2017-11-19 20:21:20.958 ERROR 186756 --- [http-nio-8080-exec-8] o.h.engine.jdbc.spi.SqlExceptionHelper   : Table 'mycfpsapf.CLIENTE' doesn't exist
+2017-11-19 20:21:20.959  INFO 186756 --- [http-nio-8080-exec-8] o.h.e.internal.DefaultLoadEventListener  : HHH000327: Error performing load command : org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-11-19 20:21:21.024 ERROR 186756 --- [http-nio-8080-exec-8] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/paraconsistente] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet] with root cause
+
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'mycfpsapf.CLIENTE' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:943)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2487)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1966)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:70)
+	at org.hibernate.loader.plan.exec.internal.AbstractLoadPlanBasedLoader.getResultSet(AbstractLoadPlanBasedLoader.java:434)
+	at org.hibernate.loader.plan.exec.internal.AbstractLoadPlanBasedLoader.executeQueryStatement(AbstractLoadPlanBasedLoader.java:186)
+	at org.hibernate.loader.plan.exec.internal.AbstractLoadPlanBasedLoader.executeLoad(AbstractLoadPlanBasedLoader.java:121)
+	at org.hibernate.loader.plan.exec.internal.AbstractLoadPlanBasedLoader.executeLoad(AbstractLoadPlanBasedLoader.java:86)
+	at org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader.load(AbstractLoadPlanBasedEntityLoader.java:167)
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:4019)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:508)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:478)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:219)
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:278)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:121)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:89)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:1129)
+	at org.hibernate.internal.SessionImpl.access$2600(SessionImpl.java:164)
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.load(SessionImpl.java:2696)
+	at org.hibernate.internal.SessionImpl.get(SessionImpl.java:975)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.find(AbstractEntityManagerImpl.java:1075)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.find(AbstractEntityManagerImpl.java:1039)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:347)
+	at com.sun.proxy.$Proxy92.find(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:298)
+	at com.sun.proxy.$Proxy92.find(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findOne(SimpleJpaRepository.java:241)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.executeMethodOn(RepositoryFactorySupport.java:504)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:489)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:461)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:133)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy101.findOne(Unknown Source)
+	at br.com.paraconsistente.service.impl.ProjetoServiceImpl.findById(ProjetoServiceImpl.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy102.findById(Unknown Source)
+	at br.com.paraconsistente.controller.RestApiProjetoController.getProjeto(RestApiProjetoController.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+
+2017-11-19 20:22:16.968  INFO 186756 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-11-19 20:22:16.970  INFO 186756 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75db5df9: startup date [Sun Nov 19 20:14:00 BRST 2017]; root of context hierarchy
+2017-11-19 20:22:16.976  INFO 186756 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-11-19 20:22:16.977  INFO 186756 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2017-11-19 20:22:16.989  INFO 186756 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-11-19 20:22:16.992  INFO 186756 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2017-11-19 20:22:17.384 ERROR 186756 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO drop foreign key FK95ppokh1htrd92jh2pe92k7tk
+2017-11-19 20:22:17.385 ERROR 186756 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : Can't DROP 'FK95ppokh1htrd92jh2pe92k7tk'; check that column/key exists
+2017-11-19 20:22:17.423 ERROR 186756 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO drop foreign key FKtgfw5frbxkqummr3rvlbvnrof
+2017-11-19 20:22:17.423 ERROR 186756 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : Can't DROP 'FKtgfw5frbxkqummr3rvlbvnrof'; check that column/key exists
+2017-11-19 20:22:17.459 ERROR 186756 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO drop foreign key FKphn4uompi8j1lhvbh0ibbrgx7
+2017-11-19 20:22:17.459 ERROR 186756 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : Can't DROP 'FKphn4uompi8j1lhvbh0ibbrgx7'; check that column/key exists
+2017-11-19 20:22:17.568 ERROR 186756 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table USUARIO drop foreign key FKro68mnop4bsidjkbd394no2g8
+2017-11-19 20:22:17.568 ERROR 186756 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.USUARIO' doesn't exist
+2017-11-19 20:22:18.272  INFO 186756 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2017-11-19 20:22:18.275  INFO 186756 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Close initiated...
+2017-11-19 20:22:18.280  INFO 186756 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Closed.
+2017-11-19 20:22:32.044  INFO 187776 --- [main] b.c.p.SpringBootMainApplication          : Starting SpringBootMainApplication on PC-DRUBERVANY with PID 187776 (D:\projetos\paraconsistente\target\classes started by DRUBERVANY in D:\projetos\paraconsistente)
+2017-11-19 20:22:32.058  INFO 187776 --- [main] b.c.p.SpringBootMainApplication          : No active profile set, falling back to default profiles: default
+2017-11-19 20:22:32.471  INFO 187776 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75db5df9: startup date [Sun Nov 19 20:22:32 BRST 2017]; root of context hierarchy
+2017-11-19 20:22:41.759  INFO 187776 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-11-19 20:22:41.854  INFO 187776 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-19 20:22:41.860  INFO 187776 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-19 20:22:42.502  INFO 187776 --- [localhost-startStop-1] o.a.c.c.C.[.[.[/paraconsistente]         : Initializing Spring embedded WebApplicationContext
+2017-11-19 20:22:42.504  INFO 187776 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 10050 ms
+2017-11-19 20:22:43.169  INFO 187776 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-19 20:22:43.183  INFO 187776 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-19 20:22:43.871  INFO 187776 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-11-19 20:22:43.945  INFO 187776 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-11-19 20:22:44.268  INFO 187776 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2017-11-19 20:22:44.275  INFO 187776 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-11-19 20:22:44.285  INFO 187776 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-11-19 20:22:44.456  INFO 187776 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-11-19 20:22:45.049  INFO 187776 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Started.
+2017-11-19 20:22:46.864  INFO 187776 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-19 20:22:48.407  INFO 187776 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:22:49.798  INFO 187776 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:22:49.804  INFO 187776 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:22:49.827  INFO 187776 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:22:49.829  INFO 187776 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:22:50.369  INFO 187776 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2017-11-19 20:22:50.492 ERROR 187776 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO drop foreign key FK95ppokh1htrd92jh2pe92k7tk
+2017-11-19 20:22:50.493 ERROR 187776 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.PROJETO' doesn't exist
+2017-11-19 20:22:50.512 ERROR 187776 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO drop foreign key FKtgfw5frbxkqummr3rvlbvnrof
+2017-11-19 20:22:50.515 ERROR 187776 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.PROJETO' doesn't exist
+2017-11-19 20:22:50.531 ERROR 187776 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO drop foreign key FKphn4uompi8j1lhvbh0ibbrgx7
+2017-11-19 20:22:50.532 ERROR 187776 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.PROJETO' doesn't exist
+2017-11-19 20:22:50.549 ERROR 187776 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO_CFPS drop foreign key FKdk60y9pkdbhyl2qu0so6gg0d9
+2017-11-19 20:22:50.549 ERROR 187776 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.PROJETO_CFPS' doesn't exist
+2017-11-19 20:22:50.574 ERROR 187776 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table PROJETO_CFPS drop foreign key FK3a4ef54d9a1kqicduhd5drkm1
+2017-11-19 20:22:50.575 ERROR 187776 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.PROJETO_CFPS' doesn't exist
+2017-11-19 20:22:50.640 ERROR 187776 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table USUARIO drop foreign key FKro68mnop4bsidjkbd394no2g8
+2017-11-19 20:22:50.641 ERROR 187776 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : Table 'mycfpsapf.USUARIO' doesn't exist
+2017-11-19 20:22:52.648  INFO 187776 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000476: Executing import script '/import.sql'
+2017-11-19 20:22:53.017  INFO 187776 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2017-11-19 20:22:53.156  INFO 187776 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:22:53.157  INFO 187776 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:22:53.158  INFO 187776 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: br.com.paraconsistente.model.EnumStatusProjeto (class must be instantiated by Interceptor)
+2017-11-19 20:22:53.192  INFO 187776 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-11-19 20:22:55.968  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto java.lang.String br.com.paraconsistente.controller.ApplicationController.home(org.springframework.ui.ModelMap)
+2017-11-19 20:22:55.972  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/partials/{page}]}" onto java.lang.String br.com.paraconsistente.controller.ApplicationController.partialHandler(java.lang.String)
+2017-11-19 20:22:55.989  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.paraconsistente.model.CFPS>> br.com.paraconsistente.controller.RestApiCFPSController.listAllCFPSs()
+2017-11-19 20:22:55.991  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiCFPSController.getCFPS(long)
+2017-11-19 20:22:55.994  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiCFPSController.createCFPS(br.com.paraconsistente.model.CFPS,org.springframework.web.util.UriComponentsBuilder)
+2017-11-19 20:22:55.995  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiCFPSController.updateCFPS(long,br.com.paraconsistente.model.CFPS)
+2017-11-19 20:22:55.996  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiCFPSController.deleteCFPS(long)
+2017-11-19 20:22:55.998  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/cfps/],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.paraconsistente.model.CFPS> br.com.paraconsistente.controller.RestApiCFPSController.deleteAllCFPSs()
+2017-11-19 20:22:56.011  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.paraconsistente.model.Cliente>> br.com.paraconsistente.controller.RestApiClienteController.listAllClientes()
+2017-11-19 20:22:56.013  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/cnpj/{cnpj}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiClienteController.getCliente(java.lang.String)
+2017-11-19 20:22:56.014  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiClienteController.getCliente(long)
+2017-11-19 20:22:56.016  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiClienteController.createCliente(br.com.paraconsistente.model.Cliente,org.springframework.web.util.UriComponentsBuilder)
+2017-11-19 20:22:56.018  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiClienteController.updateCliente(long,br.com.paraconsistente.model.Cliente)
+2017-11-19 20:22:56.019  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiClienteController.deleteCliente(long)
+2017-11-19 20:22:56.021  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/clientes/],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.paraconsistente.model.Cliente> br.com.paraconsistente.controller.RestApiClienteController.deleteAllClientes()
+2017-11-19 20:22:56.060  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiEnterpriseController.getEnterprise(long)
+2017-11-19 20:22:56.063  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiEnterpriseController.createEnterprise(br.com.paraconsistente.model.Enterprise,org.springframework.web.util.UriComponentsBuilder)
+2017-11-19 20:22:56.065  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiEnterpriseController.updateEnterprise(long,br.com.paraconsistente.model.Enterprise)
+2017-11-19 20:22:56.066  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiEnterpriseController.deleteEnterprise(long)
+2017-11-19 20:22:56.068  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.paraconsistente.model.Enterprise>> br.com.paraconsistente.controller.RestApiEnterpriseController.listAllEnterprises()
+2017-11-19 20:22:56.069  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/enterprise/],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.paraconsistente.model.Enterprise> br.com.paraconsistente.controller.RestApiEnterpriseController.deleteAllEnterprises()
+2017-11-19 20:22:56.099  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.paraconsistente.model.Projeto>> br.com.paraconsistente.controller.RestApiProjetoController.listAllProjetos()
+2017-11-19 20:22:56.107  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiProjetoController.getProjeto(long)
+2017-11-19 20:22:56.114  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiProjetoController.createProjeto(br.com.paraconsistente.model.Projeto,org.springframework.web.util.UriComponentsBuilder)
+2017-11-19 20:22:56.116  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiProjetoController.updateProjeto(long,br.com.paraconsistente.model.Projeto)
+2017-11-19 20:22:56.118  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiProjetoController.deleteProjeto(long)
+2017-11-19 20:22:56.120  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/projetos/],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.paraconsistente.model.Projeto> br.com.paraconsistente.controller.RestApiProjetoController.deleteAllProjetos()
+2017-11-19 20:22:56.129  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.paraconsistente.model.Usuario>> br.com.paraconsistente.controller.RestApiUsuarioController.listAllUsuarios()
+2017-11-19 20:22:56.131  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/{email}/{senha}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiUsuarioController.getUsuario(java.lang.String,java.lang.String)
+2017-11-19 20:22:56.142  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiUsuarioController.getUsuario(long)
+2017-11-19 20:22:56.144  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiUsuarioController.createUsuario(br.com.paraconsistente.model.Usuario,org.springframework.web.util.UriComponentsBuilder)
+2017-11-19 20:22:56.146  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiUsuarioController.updateUsuario(long,br.com.paraconsistente.model.Usuario)
+2017-11-19 20:22:56.148  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> br.com.paraconsistente.controller.RestApiUsuarioController.deleteUsuario(long)
+2017-11-19 20:22:56.150  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/usuarios/],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.paraconsistente.model.Usuario> br.com.paraconsistente.controller.RestApiUsuarioController.deleteAllUsuarios()
+2017-11-19 20:22:56.163  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-19 20:22:56.166  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-19 20:22:56.569  INFO 187776 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75db5df9: startup date [Sun Nov 19 20:22:32 BRST 2017]; root of context hierarchy
+2017-11-19 20:22:59.371  INFO 187776 --- [main] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75db5df9: startup date [Sun Nov 19 20:22:32 BRST 2017]; root of context hierarchy] and template loader path [classpath:/templates/]
+2017-11-19 20:22:59.376  INFO 187776 --- [main] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2017-11-19 20:22:59.540  WARN 187776 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2017-11-19 20:23:00.286  INFO 187776 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-19 20:23:00.291  INFO 187776 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-11-19 20:23:00.320  INFO 187776 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-11-19 20:23:00.607  INFO 187776 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-11-19 20:23:00.630  INFO 187776 --- [main] b.c.p.SpringBootMainApplication          : Started SpringBootMainApplication in 30.075 seconds (JVM running for 33.364)
+2017-11-19 20:23:19.960  INFO 187776 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/paraconsistente]         : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-19 20:23:19.961  INFO 187776 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-19 20:23:20.052  INFO 187776 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 90 ms
+2017-11-19 20:23:20.178  INFO 187776 --- [http-nio-8080-exec-1] b.c.p.c.RestApiProjetoController         : Fetching Projeto with id 1
+2017-11-19 20:23:24.844  INFO 187776 --- [http-nio-8080-exec-2] b.c.p.c.RestApiProjetoController         : Fetching Projeto with id 2
+2017-11-19 20:23:24.944 ERROR 187776 --- [http-nio-8080-exec-2] b.c.p.c.RestApiProjetoController         : Projeto with id 2 not found.
+2017-11-19 20:23:30.251  INFO 187776 --- [http-nio-8080-exec-3] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-11-19 20:23:37.274  INFO 187776 --- [http-nio-8080-exec-6] b.c.p.c.RestApiUsuarioController         : Fetching Usuario with id teste@teste.com.br e 123456
+2017-11-19 20:23:54.571  INFO 187776 --- [http-nio-8080-exec-4] b.c.p.c.RestApiClienteController         : Fetching Cliente with id 45578205000197
+2017-11-19 20:27:04.838  INFO 187776 --- [http-nio-8080-exec-10] b.c.p.c.RestApiUsuarioController         : Fetching Usuario with id teste@teste.com.br e 123456
+2017-11-19 20:27:18.354  INFO 187776 --- [http-nio-8080-exec-2] b.c.p.c.RestApiClienteController         : Fetching Cliente with id 45578205000197
+2017-11-19 20:28:46.976  WARN 187776 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to read HTTP message: org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Can not deserialize value of type br.com.paraconsistente.model.EnumStatusProjeto from String "": value not one of declared Enum instance names: [CRIADO, ALOCADO, CADASTRADO, CONCLUIDO, APROVADO]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Can not deserialize value of type br.com.paraconsistente.model.EnumStatusProjeto from String "": value not one of declared Enum instance names: [CRIADO, ALOCADO, CADASTRADO, CONCLUIDO, APROVADO]
+ at [Source: java.io.PushbackInputStream@450bf049; line: 5, column: 14] (through reference chain: br.com.paraconsistente.model.Projeto["status"])
+2017-11-19 20:28:52.375  WARN 187776 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to read HTTP message: org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Can not deserialize value of type br.com.paraconsistente.model.EnumStatusProjeto from String "": value not one of declared Enum instance names: [CRIADO, ALOCADO, CADASTRADO, CONCLUIDO, APROVADO]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Can not deserialize value of type br.com.paraconsistente.model.EnumStatusProjeto from String "": value not one of declared Enum instance names: [CRIADO, ALOCADO, CADASTRADO, CONCLUIDO, APROVADO]
+ at [Source: java.io.PushbackInputStream@49ef9668; line: 5, column: 14] (through reference chain: br.com.paraconsistente.model.Projeto["status"])
+2017-11-19 20:29:23.438  INFO 187776 --- [http-nio-8080-exec-4] b.c.p.c.RestApiProjetoController         : Creating Projeto : br.com.paraconsistente.model.Projeto@1e8b90bb
+2017-11-19 20:29:41.819  INFO 187776 --- [http-nio-8080-exec-5] b.c.p.c.RestApiProjetoController         : Fetching Projeto with id 2
+2017-11-19 20:29:46.507  INFO 187776 --- [http-nio-8080-exec-9] b.c.p.c.RestApiProjetoController         : Fetching & Deleting Projeto with id 2
+2017-11-19 20:32:07.899  INFO 187776 --- [http-nio-8080-exec-3] b.c.p.c.RestApiUsuarioController         : Fetching Usuario with id teste@teste.com.br e 123456
+2017-11-19 20:32:26.206  INFO 187776 --- [http-nio-8080-exec-7] b.c.p.c.RestApiClienteController         : Fetching Cliente with id 45578205000197
+2017-11-19 20:34:28.624  INFO 187776 --- [http-nio-8080-exec-10] b.c.p.c.RestApiProjetoController         : Creating Projeto : br.com.paraconsistente.model.Projeto@2f0df3ad
+2017-11-19 20:37:56.705  INFO 187776 --- [http-nio-8080-exec-6] b.c.p.c.RestApiUsuarioController         : Fetching Usuario with id teste@teste.com.br e 123456
+2017-11-19 20:38:21.566  INFO 187776 --- [http-nio-8080-exec-4] b.c.p.c.RestApiClienteController         : Fetching Cliente with id 3
+2017-11-19 20:38:21.653 ERROR 187776 --- [http-nio-8080-exec-4] b.c.p.c.RestApiClienteController         : Cliente with id 3 not found.
+2017-11-19 20:38:28.116  INFO 187776 --- [http-nio-8080-exec-8] b.c.p.c.RestApiClienteController         : Fetching Cliente with id 45578205000197
+2017-11-19 20:38:52.382  INFO 187776 --- [http-nio-8080-exec-9] b.c.p.c.RestApiProjetoController         : Fetching Projeto with id 1
+2017-11-19 20:39:31.977  INFO 187776 --- [http-nio-8080-exec-10] b.c.p.c.RestApiProjetoController         : Fetching Projeto with id 1
+2017-11-19 20:41:49.910  INFO 187776 --- [http-nio-8080-exec-2] b.c.p.c.RestApiUsuarioController         : Fetching Usuario with id teste@teste.com.br e 123456
+2017-11-19 20:41:53.436  INFO 187776 --- [http-nio-8080-exec-6] b.c.p.c.RestApiProjetoController         : Fetching Projeto with id 1
+2017-11-19 20:41:59.504  INFO 187776 --- [http-nio-8080-exec-4] b.c.p.c.RestApiProjetoController         : Creating Projeto : br.com.paraconsistente.model.Projeto@54f525c8
+2017-11-19 20:42:04.558  INFO 187776 --- [http-nio-8080-exec-8] b.c.p.c.RestApiProjetoController         : Fetching Projeto with id 1
+2017-11-19 20:42:35.840  INFO 187776 --- [http-nio-8080-exec-5] b.c.p.c.RestApiClienteController         : Fetching Cliente with id 45578205000197
+2017-11-19 20:42:40.028  INFO 187776 --- [http-nio-8080-exec-9] b.c.p.c.RestApiProjetoController         : Creating Projeto : br.com.paraconsistente.model.Projeto@1b3850ef
+2017-11-19 20:42:40.124 ERROR 187776 --- [http-nio-8080-exec-9] b.c.p.c.RestApiProjetoController         : Unable to create. A Projeto with name Danilo Rubervany already exist
+2017-11-19 20:42:50.287  INFO 187776 --- [http-nio-8080-exec-10] b.c.p.c.RestApiProjetoController         : Creating Projeto : br.com.paraconsistente.model.Projeto@74c75f93
+2017-11-19 20:42:50.383 ERROR 187776 --- [http-nio-8080-exec-10] b.c.p.c.RestApiProjetoController         : Unable to create. A Projeto with name Danilo Rubervany already exist
+2017-11-19 20:43:32.940  INFO 187776 --- [http-nio-8080-exec-2] b.c.p.c.RestApiProjetoController         : Creating Projeto : br.com.paraconsistente.model.Projeto@42f9e5a0
+2017-11-19 20:47:54.435  INFO 187776 --- [http-nio-8080-exec-4] b.c.p.c.RestApiUsuarioController         : Fetching Usuario with id teste@teste.com.br e 123456
+2017-11-19 20:48:07.490  INFO 187776 --- [http-nio-8080-exec-5] b.c.p.c.RestApiProjetoController         : Creating Projeto : br.com.paraconsistente.model.Projeto@1bd38f2
+2017-11-19 20:48:07.635 ERROR 187776 --- [http-nio-8080-exec-5] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/paraconsistente] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : br.com.paraconsistente.model.Projeto.cliente -> br.com.paraconsistente.model.Cliente; nested exception is java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : br.com.paraconsistente.model.Projeto.cliente -> br.com.paraconsistente.model.Cliente] with root cause
+
+org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : br.com.paraconsistente.model.Projeto.cliente -> br.com.paraconsistente.model.Cliente
+	at org.hibernate.engine.spi.CascadingActions$8.noCascade(CascadingActions.java:379)
+	at org.hibernate.engine.internal.Cascade.cascade(Cascade.java:126)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.cascadeOnFlush(AbstractFlushingEventListener.java:150)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:141)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEverythingToExecutions(AbstractFlushingEventListener.java:74)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:38)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65)
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:504)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy102.saveProjeto(Unknown Source)
+	at br.com.paraconsistente.controller.RestApiProjetoController.createProjeto(RestApiProjetoController.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+
+2017-11-19 20:48:36.379  INFO 187776 --- [http-nio-8080-exec-9] b.c.p.c.RestApiClienteController         : Fetching Cliente with id 45578205000197
+2017-11-19 20:48:38.533  INFO 187776 --- [http-nio-8080-exec-10] b.c.p.c.RestApiProjetoController         : Creating Projeto : br.com.paraconsistente.model.Projeto@6dba02ec
+2017-11-19 20:50:56.461  INFO 187776 --- [http-nio-8080-exec-2] b.c.p.c.RestApiUsuarioController         : Fetching Usuario with id teste@teste.com.br e 123456
+2017-11-19 20:51:05.105  INFO 187776 --- [http-nio-8080-exec-6] b.c.p.c.RestApiClienteController         : Fetching Cliente with id 45578205000197
+2017-11-19 20:51:11.618  INFO 187776 --- [http-nio-8080-exec-7] b.c.p.c.RestApiProjetoController         : Creating Projeto : br.com.paraconsistente.model.Projeto@7feaf3d0
+2017-11-19 21:04:50.435  INFO 187776 --- [http-nio-8080-exec-8] b.c.p.c.RestApiUsuarioController         : Fetching Usuario with id teste@teste.com.br e 123456
+2017-11-19 21:24:41.527  WARN 187776 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m54s404ms161µs321ns).
+2017-11-19 21:33:43.411  INFO 187776 --- [http-nio-8080-exec-10] b.c.p.c.RestApiUsuarioController         : Fetching Usuario with id teste@teste.com.br e 123456
+2017-11-19 21:34:43.270  INFO 187776 --- [http-nio-8080-exec-3] b.c.p.c.RestApiUsuarioController         : Fetching Usuario with id teste@teste.com.br e 123456
+2017-11-19 21:51:52.096  INFO 187776 --- [http-nio-8080-exec-10] b.c.p.c.RestApiUsuarioController         : Fetching Usuario with id teste@teste.com.br e 123456
+2017-11-19 21:52:02.253  INFO 187776 --- [http-nio-8080-exec-2] b.c.p.c.RestApiProjetoController         : Fetching Projeto with id 1
+2017-11-19 22:15:29.512  INFO 187776 --- [http-nio-8080-exec-7] b.c.p.c.RestApiUsuarioController         : Fetching Usuario with id teste@teste.com.br e 123456
+2017-11-19 22:23:30.955  INFO 187776 --- [http-nio-8080-exec-9] b.c.p.c.RestApiUsuarioController         : Fetching Usuario with id teste@teste.com.br e 123456
