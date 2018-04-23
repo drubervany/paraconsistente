@@ -1,4 +1,4 @@
-# **SYSHEALTH**
+# **Paraconsistente**
 
 **Documento de configuração de ambiente de desenvolvimento**
 
