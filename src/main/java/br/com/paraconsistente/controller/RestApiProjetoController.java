@@ -93,7 +93,7 @@ public class RestApiProjetoController {
 		}
 
 		currentProjeto.setNome(projeto.getNome());
-		currentProjeto.setCfpsSelecionado(currentProjeto.getCfpsSelecionado());
+		currentProjeto.setCfps(currentProjeto.getCfps());
 		currentProjeto.setPontosFuncao(projeto.getPontosFuncao());
 
 		projetoService.updateProjeto(currentProjeto);

@@ -45,15 +45,14 @@ public class Projeto implements Serializable {
 
 	private Date dataFim;
 
-	@Column
 	@Enumerated(EnumType.STRING)
 	private StatusProjetoEnum status;
 
 	@OneToMany
-	private List<CFPS> cfps;
+	private List<CFPS> cfpss;
 
 	@ManyToOne
-	private CFPS cfpsSelecionado;
+	private CFPS cfps;
 
 	private Integer pontosFuncao;
 
@@ -129,20 +128,20 @@ public class Projeto implements Serializable {
 		this.status = status;
 	}
 
-	public List<CFPS> getCfps() {
+	public List<CFPS> getCfpss() {
+		return cfpss;
+	}
+
+	public void setCfpss(List<CFPS> cfps) {
+		this.cfpss = cfps;
+	}
+
+	public CFPS getCfps() {
 		return cfps;
 	}
 
-	public void setCfps(List<CFPS> cfps) {
-		this.cfps = cfps;
-	}
-
-	public CFPS getCfpsSelecionado() {
-		return cfpsSelecionado;
-	}
-
-	public void setCfpsSelecionado(CFPS cfpsSelecionado) {
-		this.cfpsSelecionado = cfpsSelecionado;
+	public void setCfps(CFPS cfpsSelecionado) {
+		this.cfps = cfpsSelecionado;
 	}
 
 }
