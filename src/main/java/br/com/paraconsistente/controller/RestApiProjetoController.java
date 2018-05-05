@@ -93,6 +93,8 @@ public class RestApiProjetoController {
 		}
 
 		currentProjeto.setNome(projeto.getNome());
+		currentProjeto.setCfpsSelecionado(currentProjeto.getCfpsSelecionado());
+		currentProjeto.setPontosFuncao(projeto.getPontosFuncao());
 
 		projetoService.updateProjeto(currentProjeto);
 		return new ResponseEntity<Projeto>(currentProjeto, HttpStatus.OK);

@@ -11,12 +11,13 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
+
+import br.com.paraconsistente.enuns.StatusProjetoEnum;
 
 @Entity
 @Table(name = "PROJETO")
@@ -44,16 +45,16 @@ public class Projeto implements Serializable {
 
 	private Date dataFim;
 
-	private Integer pontosFuncao;
+	@Enumerated(EnumType.STRING)
+	private StatusProjetoEnum status;
 
-	@ManyToMany
+	@OneToMany
 	private List<CFPS> cfps;
 
 	@ManyToOne
-	private Medicao mediacao;
+	private CFPS cfpsSelecionado;
 
-	@Enumerated(EnumType.STRING)
-	private EnumStatusProjeto status;
+	private Integer pontosFuncao;
 
 	public Gerente getGerente() {
 		return gerente;
@@ -79,15 +80,11 @@ public class Projeto implements Serializable {
 		return pontosFuncao;
 	}
 
-	public Medicao getMediacao() {
-		return mediacao;
-	}
-
 	public Long getId() {
 		return id;
 	}
 
-	public EnumStatusProjeto getStatus() {
+	public StatusProjetoEnum getStatus() {
 		return status;
 	}
 
@@ -127,11 +124,7 @@ public class Projeto implements Serializable {
 		this.pontosFuncao = pontosFuncao;
 	}
 
-	public void setMediacao(Medicao mediacao) {
-		this.mediacao = mediacao;
-	}
-
-	public void setStatus(EnumStatusProjeto status) {
+	public void setStatus(StatusProjetoEnum status) {
 		this.status = status;
 	}
 
@@ -141,6 +134,14 @@ public class Projeto implements Serializable {
 
 	public void setCfps(List<CFPS> cfps) {
 		this.cfps = cfps;
+	}
+
+	public CFPS getCfpsSelecionado() {
+		return cfpsSelecionado;
+	}
+
+	public void setCfpsSelecionado(CFPS cfpsSelecionado) {
+		this.cfpsSelecionado = cfpsSelecionado;
 	}
 
 }

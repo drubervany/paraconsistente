@@ -3,10 +3,15 @@ package br.com.paraconsistente.model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import br.com.paraconsistente.enuns.TipoFuncaoEnum;
 
 @Entity
 @Table(name = "MEDICAO")
@@ -18,21 +23,23 @@ public class Medicao implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private Integer ali;
+	@ManyToOne
+	private Projeto projeto;
+	
+	@ManyToOne
+	private CFPS cfps;
 
-	private Integer aie;
+	@ManyToOne
+	private Funcao funcao;
 
-	private Integer ce;
+	@Enumerated(EnumType.STRING)
+	private TipoFuncaoEnum tipo;
 
-	private Integer ee;
+	private Integer qtdeDados;
 
-	private Integer se;
+	private Integer qtdeRegistros;
 
-	private String tiposDado;
-
-	private String tiposRegistro;
-
-	private String arquivoReferenciado;
+	private Integer totalPonfoFuncao;
 
 	public Long getId() {
 		return id;
@@ -42,68 +49,59 @@ public class Medicao implements Serializable {
 		this.id = id;
 	}
 
-	public Integer getAli() {
-		return ali;
+	public TipoFuncaoEnum getTipo() {
+		return tipo;
 	}
 
-	public void setAli(Integer ali) {
-		this.ali = ali;
+	public void setTipo(TipoFuncaoEnum tipo) {
+		this.tipo = tipo;
 	}
 
-	public Integer getAie() {
-		return aie;
+	public Funcao getFuncao() {
+		return funcao;
 	}
 
-	public void setAie(Integer aie) {
-		this.aie = aie;
+	public void setFuncao(Funcao funcao) {
+		this.funcao = funcao;
 	}
 
-	public Integer getCe() {
-		return ce;
+	public Integer getQtdeDados() {
+		return qtdeDados;
 	}
 
-	public void setCe(Integer ce) {
-		this.ce = ce;
+	public void setQtdeDados(Integer qtdeDados) {
+		this.qtdeDados = qtdeDados;
 	}
 
-	public Integer getEe() {
-		return ee;
+	public Integer getQtdeRegistros() {
+		return qtdeRegistros;
 	}
 
-	public void setEe(Integer ee) {
-		this.ee = ee;
+	public void setQtdeRegistros(Integer qtdeRegistros) {
+		this.qtdeRegistros = qtdeRegistros;
 	}
 
-	public Integer getSe() {
-		return se;
+	public Integer getTotalPonfoFuncao() {
+		return totalPonfoFuncao;
 	}
 
-	public void setSe(Integer se) {
-		this.se = se;
+	public void setTotalPonfoFuncao(Integer totalPonfoFuncao) {
+		this.totalPonfoFuncao = totalPonfoFuncao;
 	}
 
-	public String getTiposDado() {
-		return tiposDado;
+	public CFPS getCfps() {
+		return cfps;
 	}
 
-	public void setTiposDado(String tiposDado) {
-		this.tiposDado = tiposDado;
+	public void setCfps(CFPS cfps) {
+		this.cfps = cfps;
 	}
 
-	public String getTiposRegistro() {
-		return tiposRegistro;
+	public Projeto getProjeto() {
+		return projeto;
 	}
 
-	public void setTiposRegistro(String tiposRegistro) {
-		this.tiposRegistro = tiposRegistro;
+	public void setProjeto(Projeto projeto) {
+		this.projeto = projeto;
 	}
-
-	public String getArquivoReferenciado() {
-		return arquivoReferenciado;
-	}
-
-	public void setArquivoReferenciado(String arquivoReferenciado) {
-		this.arquivoReferenciado = arquivoReferenciado;
-	}
-
 }
