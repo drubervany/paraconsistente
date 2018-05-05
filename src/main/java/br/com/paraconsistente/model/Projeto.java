@@ -45,6 +45,7 @@ public class Projeto implements Serializable {
 
 	private Date dataFim;
 
+	@Column
 	@Enumerated(EnumType.STRING)
 	private StatusProjetoEnum status;
 
