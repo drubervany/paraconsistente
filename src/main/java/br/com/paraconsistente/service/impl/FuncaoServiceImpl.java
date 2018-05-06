@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.paraconsistente.dao.FuncaoDao;
+import br.com.paraconsistente.model.CFPS;
 import br.com.paraconsistente.model.Funcao;
+import br.com.paraconsistente.model.Projeto;
 import br.com.paraconsistente.service.FuncaoService;
 
 @Service("funcaoService")
@@ -44,6 +46,11 @@ public class FuncaoServiceImpl implements FuncaoService {
 	@Override
 	public List<Funcao> findAll() {
 		return funcaoDao.findAll();
+	}
+
+	@Override
+	public List<Funcao> findByProjetoAndCfps(Projeto projeto, CFPS cfps) {
+		return funcaoDao.findByProjetoAndCfps(projeto, cfps);
 	}
 
 }

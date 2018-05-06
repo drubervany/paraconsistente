@@ -15,12 +15,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import br.com.paraconsistente.model.CFPS;
 import br.com.paraconsistente.model.Funcao;
+import br.com.paraconsistente.model.Projeto;
+import br.com.paraconsistente.service.CFPSService;
 import br.com.paraconsistente.service.FuncaoService;
+import br.com.paraconsistente.service.ProjetoService;
 import br.com.paraconsistente.util.CustomErrorType;
 
 @RestController
-@RequestMapping("/api/funcoes/")
+@RequestMapping("/api/")
 public class RestApiFuncaoController {
 
 	public static Logger logger = LoggerFactory.getLogger(RestApiFuncaoController.class);
@@ -28,7 +32,13 @@ public class RestApiFuncaoController {
 	@Autowired
 	FuncaoService funcaoService;
 
-	@RequestMapping(method = RequestMethod.GET)
+	@Autowired
+	ProjetoService projetoService;
+	
+	@Autowired
+	CFPSService cfpsService;
+	
+	@RequestMapping(value = "funcoes/", method = RequestMethod.GET)
 	public ResponseEntity<List<Funcao>> listAllFuncaos() {
 		List<Funcao> funcao = funcaoService.findAll();
 		if (funcao.isEmpty()) {
@@ -38,22 +48,43 @@ public class RestApiFuncaoController {
 		return new ResponseEntity<List<Funcao>>(funcao, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "funcoes/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> getCFPS(@PathVariable("id") long id) {
 		logger.info("Fetching CFPS with id {}", id);
 		Funcao funcao = funcaoService.findById(id);
 		if (funcao == null) {
 			logger.error("CFPS with id {} not found.", id);
-			return new ResponseEntity<>(new CustomErrorType("Funcao with id " + id + " not found"), HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>(new CustomErrorType("Funcao with id " + id + " not found"),
+					HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<Funcao>(funcao, HttpStatus.OK);
 	}
 
-	
-	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<?> createFuncao(@RequestBody Funcao funcao, UriComponentsBuilder ucBuilder) {
-		logger.info("Creating Funcao : {}", funcao);		
+	@RequestMapping(value = "projeto/{idProjeto}/cfps/{idCfps}/funcoes", method = RequestMethod.GET)
+	public ResponseEntity<?> getProjetoCFPS(@PathVariable("idProjeto") long idProjeto, @PathVariable("idCfps") long idCfps) {
+		logger.info("Fetching getProjetoCFPS with id {}", idProjeto);
 		
+		Projeto projeto = projetoService.findById(idProjeto);
+		if (projeto == null) {
+			logger.error("Projeto with id {} not found.", idProjeto);
+			return new ResponseEntity<>(new CustomErrorType("Projeto with id " + idProjeto + " not found"),
+					HttpStatus.NOT_FOUND);
+		}
+		
+		CFPS cfps = cfpsService.findById(idCfps);
+		if (cfps == null) {
+			logger.error("CFPS with id {} not found.", idCfps);
+			return new ResponseEntity<>(new CustomErrorType("CFPS with id " + idCfps + " not found"),
+					HttpStatus.NOT_FOUND);
+		}
+		List<Funcao> funcoes = funcaoService.findByProjetoAndCfps(projeto, cfps);
+		return new ResponseEntity<List<Funcao>>(funcoes, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "funcoes/", method = RequestMethod.POST)
+	public ResponseEntity<?> createFuncao(@RequestBody Funcao funcao, UriComponentsBuilder ucBuilder) {
+		logger.info("Creating Funcao : {}", funcao);
+
 		funcaoService.save(funcao);
 
 		HttpHeaders headers = new HttpHeaders();
@@ -61,7 +92,7 @@ public class RestApiFuncaoController {
 		return new ResponseEntity<String>(headers, HttpStatus.CREATED);
 	}
 
-	@RequestMapping(value = "{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "funcoes/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<?> updateFuncao(@PathVariable("id") long id, @RequestBody Funcao funcao) {
 		logger.info("Updating Funcao with id {}", id);
 
@@ -79,7 +110,7 @@ public class RestApiFuncaoController {
 		return new ResponseEntity<Funcao>(currentFuncao, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "funcoes/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<?> deleteFuncao(@PathVariable("id") long id) {
 		logger.info("Fetching & Deleting Funcao with id {}", id);
 
