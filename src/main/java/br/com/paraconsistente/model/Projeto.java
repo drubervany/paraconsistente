@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -11,8 +12,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -48,11 +49,14 @@ public class Projeto implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private StatusProjetoEnum status;
 
-	@OneToMany
+	@ManyToMany
 	private List<CFPS> cfpss;
 
 	@ManyToOne
 	private CFPS cfps;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	private CFPS cfpsIA;
 
 	private Integer pontosFuncao;
 
@@ -142,6 +146,14 @@ public class Projeto implements Serializable {
 
 	public void setCfps(CFPS cfpsSelecionado) {
 		this.cfps = cfpsSelecionado;
+	}
+
+	public CFPS getCfpsIA() {
+		return cfpsIA;
+	}
+
+	public void setCfpsIA(CFPS cfpsIA) {
+		this.cfpsIA = cfpsIA;
 	}
 
 }

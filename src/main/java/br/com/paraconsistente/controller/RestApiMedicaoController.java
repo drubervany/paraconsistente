@@ -1,6 +1,8 @@
 package br.com.paraconsistente.controller;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,13 +21,15 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.paraconsistente.model.CFPS;
 import br.com.paraconsistente.model.Medicao;
+import br.com.paraconsistente.model.Projeto;
 import br.com.paraconsistente.service.CFPSService;
 import br.com.paraconsistente.service.MedicaoService;
+import br.com.paraconsistente.service.ProjetoService;
 import br.com.paraconsistente.util.CustomErrorType;
 
 @Controller
 @RestController
-@RequestMapping("/api/medicoes/")
+@RequestMapping("/api/")
 public class RestApiMedicaoController {
 
 	public static Logger logger = LoggerFactory.getLogger(RestApiMedicaoController.class);
@@ -34,9 +38,12 @@ public class RestApiMedicaoController {
 	MedicaoService medicaoService;
 
 	@Autowired
+	ProjetoService projetoService;
+
+	@Autowired
 	CFPSService cfpsService;
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value = "medicoes", method = RequestMethod.GET)
 	public ResponseEntity<List<Medicao>> listAllMedicaos() {
 		List<Medicao> medicao = medicaoService.findAll();
 		if (medicao.isEmpty()) {
@@ -46,40 +53,92 @@ public class RestApiMedicaoController {
 		return new ResponseEntity<List<Medicao>>(medicao, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "cfps/{id}/total", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<CFPS> totalMedicao(@PathVariable("id") long id) {
-
-		CFPS cfps = cfpsService.findById(id);
-		if (cfps == null) {
-			logger.error("CFPS with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Medicao with CFPS id " + id + " not found"),
+	@RequestMapping(value = "projetos/{idProjeto}/medicoes", method = RequestMethod.GET)
+	public ResponseEntity<List<Medicao>> listAllMedicaosProjeto(@PathVariable("idProjeto") long idProjeto) {
+		Projeto projeto = projetoService.findById(idProjeto);
+		if (projeto == null) {
+			logger.error("Projeto with id {} not found.", idProjeto);
+			return new ResponseEntity(new CustomErrorType("Medicao with projeto id " + idProjeto + " not found"),
 					HttpStatus.NOT_FOUND);
 		}
+		List<Medicao> medicao = medicaoService.findByProjeto(projeto);
+
+		return new ResponseEntity<List<Medicao>>(medicao, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "projetos/{idProjeto}/cfps/{idCfps}/medicoes/total", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<CFPS> totalMedicao(@PathVariable("idProjeto") long idProjeto,
+			@PathVariable("idCfps") long idCfps) {
+
+		Projeto projeto = projetoService.findById(idProjeto);
+		if (projeto == null) {
+			logger.error("Projeto with id {} not found.", idProjeto);
+			return new ResponseEntity(new CustomErrorType("Medicao with projeto id " + idProjeto + " not found"),
+					HttpStatus.NOT_FOUND);
+		}
+
+		Optional<CFPS> opCfps = projeto.getCfpss().stream().filter(c -> c.getId().longValue() == idCfps).findAny();
+		if (!opCfps.isPresent()) {
+			logger.error("CFPS with id {} not found.", idCfps);
+			return new ResponseEntity(new CustomErrorType("Medicao with CFPS id " + idCfps + " not found"),
+					HttpStatus.NOT_FOUND);
+		}
+
+		CFPS cfps = opCfps.get();
 		List<Medicao> medicao = medicaoService.findByCfps(cfps);
 
-		int numeroPontos = medicao.stream().filter(c -> c.getCfps().getId().longValue() == id)
-				.mapToInt(m -> m.getTotalPonfoFuncao()).sum();
+		int numeroPontos = medicao.stream().mapToInt(m -> m.getTotalPonfoFuncao()).sum();
 
 		cfps.setNumeroPontos(numeroPontos);
 
 		return new ResponseEntity<CFPS>(cfps, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "cfps/{id}", method = RequestMethod.GET)
-	public ResponseEntity<?> getCFPS(@PathVariable("id") long id) {
-		logger.info("Fetching CFPS with id {}", id);
-		
-		CFPS cfps = cfpsService.findById(id);
-		if (cfps == null) {
-			logger.error("CFPS with id {} not found.", id);
-			return new ResponseEntity<Object>(new CustomErrorType("Medicao with CFPS id " + id + " not found"),
+	@RequestMapping(value = "projetos/{idProjeto}/cfps/medicoes", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<List<CFPS>> cfpsMedicao(@PathVariable("idProjeto") long idProjeto) {
+
+		Projeto projeto = projetoService.findById(idProjeto);
+		if (projeto == null) {
+			logger.error("CFPS with id {} not found.", idProjeto);
+			return new ResponseEntity(new CustomErrorType("Medicao with projeto id " + idProjeto + " not found"),
 					HttpStatus.NOT_FOUND);
 		}
+
+		List<CFPS> listaCfps = new ArrayList<>();
+		projeto.getCfpss().forEach(cfps -> {
+			List<Medicao> medicao = medicaoService.findByCfps(cfps);
+			int numeroPontos = medicao.stream().mapToInt(m -> m.getTotalPonfoFuncao()).sum();
+			cfps.setNumeroPontos(numeroPontos);
+			listaCfps.add(cfps);
+		});
+
+		return new ResponseEntity<List<CFPS>>(listaCfps, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "projetos/{idProjeto}/cfps/{idCfps}/medicoes", method = RequestMethod.GET)
+	public ResponseEntity<?> getCFPS(@PathVariable("idProjeto") long idProjeto, @PathVariable("idCfps") long idCfps) {
+		logger.info("Fetching CFPS with id {}", idCfps);
+
+		Projeto projeto = projetoService.findById(idProjeto);
+		if (projeto == null) {
+			logger.error("CFPS with id {} not found.", idCfps);
+			return new ResponseEntity(new CustomErrorType("Medicao with projeto id " + idProjeto + " not found"),
+					HttpStatus.NOT_FOUND);
+		}
+
+		Optional<CFPS> opCfps = projeto.getCfpss().stream().filter(c -> c.getId().longValue() == idCfps).findAny();
+		if (!opCfps.isPresent()) {
+			logger.error("CFPS with id {} not found.", idCfps);
+			return new ResponseEntity(new CustomErrorType("Medicao with CFPS id " + idCfps + " not found"),
+					HttpStatus.NOT_FOUND);
+		}
+
+		CFPS cfps = opCfps.get();
 		List<Medicao> medicao = medicaoService.findByCfps(cfps);
 		return new ResponseEntity<List<Medicao>>(medicao, HttpStatus.OK);
 	}
-	
-	@RequestMapping(value = "{id}", method = RequestMethod.GET)
+
+	@RequestMapping(value = "medicoes/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> getMedicao(@PathVariable("id") long id) {
 		logger.info("Fetching CFPS with id {}", id);
 		Medicao medicao = medicaoService.findById(id);
@@ -91,7 +150,7 @@ public class RestApiMedicaoController {
 		return new ResponseEntity<Medicao>(medicao, HttpStatus.OK);
 	}
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "medicoes", method = RequestMethod.POST)
 	public ResponseEntity<?> createMedicao(@RequestBody Medicao medicao, UriComponentsBuilder ucBuilder) {
 		logger.info("Creating Medicao : {}", medicao);
 
@@ -109,7 +168,7 @@ public class RestApiMedicaoController {
 		return new ResponseEntity<String>(headers, HttpStatus.CREATED);
 	}
 
-	@RequestMapping(value = "{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "medicoes/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<?> updateMedicao(@PathVariable("id") long id, @RequestBody Medicao medicao) {
 		logger.info("Updating Medicao with id {}", id);
 
@@ -127,7 +186,7 @@ public class RestApiMedicaoController {
 		return new ResponseEntity<Medicao>(currentMedicao, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "medicoes/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<?> deleteMedicao(@PathVariable("id") long id) {
 		logger.info("Fetching & Deleting Medicao with id {}", id);
 

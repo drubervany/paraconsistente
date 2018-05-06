@@ -23,8 +23,6 @@ public class CFPS implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotEmpty
-	@Column(nullable = false)
 	private String nome;
 
 	@CPF
@@ -33,7 +31,7 @@ public class CFPS implements Serializable {
 	@Email
 	private String email;
 
-	private Integer numeroPontos;
+	private Integer numeroPontos = 0;
 
 	public Long getId() {
 		return id;

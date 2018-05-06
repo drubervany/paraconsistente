@@ -1,6 +1,9 @@
 package br.com.paraconsistente.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import br.com.paraconsistente.enuns.StatusProjetoEnum;
 import br.com.paraconsistente.model.Projeto;
 import br.com.paraconsistente.service.ProjetoService;
 import br.com.paraconsistente.util.CustomErrorType;
@@ -93,7 +97,8 @@ public class RestApiProjetoController {
 		}
 
 		currentProjeto.setNome(projeto.getNome());
-		currentProjeto.setCfps(currentProjeto.getCfps());
+		currentProjeto.setCfps(projeto.getCfps());
+		currentProjeto.setStatus(projeto.getStatus());
 		currentProjeto.setPontosFuncao(projeto.getPontosFuncao());
 
 		projetoService.updateProjeto(currentProjeto);
@@ -125,6 +130,32 @@ public class RestApiProjetoController {
 
 		projetoService.deleteAllProjetos();
 		return new ResponseEntity<Projeto>(HttpStatus.NO_CONTENT);
+	}
+
+	@RequestMapping(value = "/projetos/status", method = RequestMethod.GET)
+	public ResponseEntity<List<Map<String, String>>> retornarTodosStatus() {
+		logger.info("retornarTodosStatus All Projetos");
+
+		List<Map<String, String>> lista = new ArrayList<>();
+		for (StatusProjetoEnum enumeration : StatusProjetoEnum.values()) {
+			Map<String, String> mapa = new HashMap<>();
+			mapa.put("id", enumeration.name());
+			mapa.put("descricao", enumeration.name());
+			lista.add(mapa);
+		}
+
+		return new ResponseEntity<List<Map<String, String>>>(lista, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/projetos/status/{status}", method = RequestMethod.GET)
+	public ResponseEntity<List<Projeto>> retornarProjetoStatus(@PathVariable("status") String status) {
+		logger.info("retornarProjetoStatus All Projetos");
+		
+		List<Projeto> projetos = projetoService.findByStatus(StatusProjetoEnum.valueOf(status));
+		if (projetos.isEmpty())
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		
+		return new ResponseEntity<List<Projeto>>(projetos, HttpStatus.OK);
 	}
 
 }

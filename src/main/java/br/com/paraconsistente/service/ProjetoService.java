@@ -3,6 +3,7 @@ package br.com.paraconsistente.service;
 
 import java.util.List;
 
+import br.com.paraconsistente.enuns.StatusProjetoEnum;
 import br.com.paraconsistente.model.Projeto;
 
 public interface ProjetoService {
@@ -22,4 +23,6 @@ public interface ProjetoService {
 	List<Projeto> findAllProjetos();
 
 	boolean isProjetoExist(Projeto Projeto);
+
+	List<Projeto> findByStatus(StatusProjetoEnum status);
 }

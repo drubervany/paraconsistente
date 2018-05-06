@@ -10,6 +10,7 @@ import br.com.paraconsistente.dao.MedicaoDao;
 import br.com.paraconsistente.enuns.TipoFuncaoEnum;
 import br.com.paraconsistente.model.CFPS;
 import br.com.paraconsistente.model.Medicao;
+import br.com.paraconsistente.model.Projeto;
 import br.com.paraconsistente.service.MedicaoService;
 
 @Service("medicaoService")
@@ -47,7 +48,11 @@ public class MedicaoServiceImpl implements MedicaoService {
 	public List<Medicao> findByCfps(CFPS cfps) {
 		return medicaoDao.findByCfps(cfps);
 	}
-
+	
+	@Override
+	public List<Medicao> findByProjeto(Projeto projeto) {
+		return medicaoDao.findByProjeto(projeto);
+	}
 	@Override
 	public List<Medicao> findAll() {
 		return medicaoDao.findAll();

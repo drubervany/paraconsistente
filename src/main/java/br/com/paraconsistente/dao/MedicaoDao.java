@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import br.com.paraconsistente.enuns.TipoFuncaoEnum;
 import br.com.paraconsistente.model.CFPS;
 import br.com.paraconsistente.model.Medicao;
+import br.com.paraconsistente.model.Projeto;
 
 @Repository
 public interface MedicaoDao extends JpaRepository<Medicao, Long> {
@@ -15,5 +16,7 @@ public interface MedicaoDao extends JpaRepository<Medicao, Long> {
 	Medicao findByTipo(TipoFuncaoEnum tipoFuncao);
 
 	List<Medicao> findByCfps(CFPS cfps);
+	
+	List<Medicao> findByProjeto(Projeto projeto);
 
 }

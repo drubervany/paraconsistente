@@ -3,6 +3,7 @@ package br.com.paraconsistente.service.impl;
 import java.util.List;
 
 import br.com.paraconsistente.dao.ProjetoDao;
+import br.com.paraconsistente.enuns.StatusProjetoEnum;
 import br.com.paraconsistente.model.Projeto;
 import br.com.paraconsistente.service.ProjetoService;
 
@@ -47,6 +48,11 @@ public class ProjetoServiceImpl implements ProjetoService {
 
 	public boolean isProjetoExist(Projeto projeto) {
 		return findByName(projeto.getNome()) != null;
+	}
+
+	@Override
+	public List<Projeto> findByStatus(StatusProjetoEnum status) {
+		return projetoDao.findByStatus(status);
 	}
 
 }
