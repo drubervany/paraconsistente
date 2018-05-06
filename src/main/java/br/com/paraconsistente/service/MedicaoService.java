@@ -26,4 +26,6 @@ public interface MedicaoService {
 	List<Medicao> findByCfps(CFPS cfps);
 
 	List<Medicao> findByProjeto(Projeto projeto);
+
+	List<Medicao> findByProjetoAndCfps(Projeto projeto, CFPS cfps);
 }

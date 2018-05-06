@@ -58,4 +58,9 @@ public class MedicaoServiceImpl implements MedicaoService {
 		return medicaoDao.findAll();
 	}
 
+	@Override
+	public List<Medicao> findByProjetoAndCfps(Projeto projeto, CFPS cfps) {
+		return medicaoDao.findByProjetoAndCfps(projeto, cfps);
+	}
+
 }
