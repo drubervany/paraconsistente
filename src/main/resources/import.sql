@@ -20,5 +20,5 @@ insert into CFPS(cpf, email, nome, numeroPontos)values('33937256881', 'cfps4@tes
 insert into PROJETO(nome, descricao, pontosFuncao, cliente_id, gerente_id, status, cfps_id)values('nome', 'descricao', 0, 1, 1, 'CADASTRADO', 1)
 insert into PROJETO_CFPS(PROJETO_ID, CFPSS_ID)values(1, 1)
 
-insert into FUNCAO(nome)values('Funcao 1')
+insert into FUNCAO(nome, projeto_id, cfps_id)values('Funcao 1', 1, 1)
 insert into MEDICAO(projeto_id, cfps_id, funcao_id, qtdeDados, qtdeRegistros, tipo, totalPonfoFuncao)values(1, 1, 1, 1, 1, 'ALI', 7)
