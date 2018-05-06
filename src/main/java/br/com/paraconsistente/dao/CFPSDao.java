@@ -8,6 +8,6 @@ import br.com.paraconsistente.model.CFPS;
 @Repository
 public interface CFPSDao extends JpaRepository<CFPS, Long> {
 
-	CFPS findByNome(String nome);
+	CFPS findByCpf(String cpf);
 
 }

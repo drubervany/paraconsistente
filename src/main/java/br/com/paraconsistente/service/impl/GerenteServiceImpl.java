@@ -20,6 +20,10 @@ public class GerenteServiceImpl implements GerenteService {
 	public Gerente findById(Long id) {
 		return gerenteDao.findOne(id);
 	}
+	
+	public Gerente findByCpf(String cpf) {
+		return gerenteDao.findByCpf(cpf);
+	}
 
 	public void saveGerente(Gerente gerente) {
 		gerenteDao.save(gerente);
@@ -43,6 +47,6 @@ public class GerenteServiceImpl implements GerenteService {
 
 	@Override
 	public boolean isGerenteExist(Gerente gerente) {
-		return findById(gerente.getId()) != null;
+		return findByCpf(gerente.getCpf()) != null;
 	}
 }

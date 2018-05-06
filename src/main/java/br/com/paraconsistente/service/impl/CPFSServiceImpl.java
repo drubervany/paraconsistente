@@ -21,8 +21,8 @@ public class CPFSServiceImpl implements CFPSService {
 		return cfpsDao.findOne(id);
 	}
 
-	public CFPS findByName(String name) {
-		return cfpsDao.findByNome(name);
+	public CFPS findByCPF(String cpf) {
+		return cfpsDao.findByCpf(cpf);
 	}
 
 	public void saveCFPS(CFPS cfps) {
@@ -46,7 +46,7 @@ public class CPFSServiceImpl implements CFPSService {
 	}
 
 	public boolean isCFPSExist(CFPS cfps) {
-		return findByName(cfps.getNome()) != null;
+		return findByCPF(cfps.getCpf()) != null;
 	}
 
 }

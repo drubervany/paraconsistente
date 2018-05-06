@@ -32,7 +32,7 @@ public class RestApiFuncaoController {
 	public ResponseEntity<List<Funcao>> listAllFuncaos() {
 		List<Funcao> funcao = funcaoService.findAll();
 		if (funcao.isEmpty()) {
-			return new ResponseEntity(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			// You many decide to return HttpStatus.NOT_FOUND
 		}
 		return new ResponseEntity<List<Funcao>>(funcao, HttpStatus.OK);
@@ -44,7 +44,7 @@ public class RestApiFuncaoController {
 		Funcao funcao = funcaoService.findById(id);
 		if (funcao == null) {
 			logger.error("CFPS with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Funcao with id " + id + " not found"), HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>(new CustomErrorType("Funcao with id " + id + " not found"), HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<Funcao>(funcao, HttpStatus.OK);
 	}
@@ -52,14 +52,8 @@ public class RestApiFuncaoController {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<?> createFuncao(@RequestBody Funcao funcao, UriComponentsBuilder ucBuilder) {
-		logger.info("Creating Funcao : {}", funcao);
-
-		if (funcaoService.isExist(funcao)) {
-			logger.error("Unable to create. A Funcao with name {} already exist", funcao.getNome());
-			return new ResponseEntity(
-					new CustomErrorType("Unable to create. A Funcao with name " + funcao.getNome() + " already exist."),
-					HttpStatus.CONFLICT);
-		}
+		logger.info("Creating Funcao : {}", funcao);		
+		
 		funcaoService.save(funcao);
 
 		HttpHeaders headers = new HttpHeaders();
@@ -75,7 +69,7 @@ public class RestApiFuncaoController {
 
 		if (currentFuncao == null) {
 			logger.error("Unable to update. Funcao with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Unable to upate. Funcao with id " + id + " not found."),
+			return new ResponseEntity<>(new CustomErrorType("Unable to upate. Funcao with id " + id + " not found."),
 					HttpStatus.NOT_FOUND);
 		}
 
@@ -92,7 +86,7 @@ public class RestApiFuncaoController {
 		Funcao funcao = funcaoService.findById(id);
 		if (funcao == null) {
 			logger.error("Unable to delete. Funcao with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Unable to delete. Funcao with id " + id + " not found."),
+			return new ResponseEntity<>(new CustomErrorType("Unable to delete. Funcao with id " + id + " not found."),
 					HttpStatus.NOT_FOUND);
 		}
 		funcaoService.delete(id);

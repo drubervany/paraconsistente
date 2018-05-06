@@ -35,7 +35,7 @@ public class RestApiCFPSController {
 	public ResponseEntity<List<CFPS>> listAllCFPSs() {
 		List<CFPS> cfps = cfpsService.findAllCFPSs();
 		if (cfps.isEmpty()) {
-			return new ResponseEntity(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			// You many decide to return HttpStatus.NOT_FOUND
 		}
 		return new ResponseEntity<List<CFPS>>(cfps, HttpStatus.OK);
@@ -50,7 +50,7 @@ public class RestApiCFPSController {
 		CFPS cfps = cfpsService.findById(id);
 		if (cfps == null) {
 			logger.error("CFPS with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("CFPS with id " + id + " not found"),
+			return new ResponseEntity<>(new CustomErrorType("CFPS with id " + id + " not found"),
 					HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<CFPS>(cfps, HttpStatus.OK);
@@ -65,7 +65,7 @@ public class RestApiCFPSController {
 
 		if (cfpsService.isCFPSExist(cfps)) {
 			logger.error("Unable to create. A CFPS with name {} already exist", cfps.getNome());
-			return new ResponseEntity(
+			return new ResponseEntity<>(
 					new CustomErrorType(
 							"Unable to create. A CFPS with name " + cfps.getNome() + " already exist."),
 					HttpStatus.CONFLICT);
@@ -88,7 +88,7 @@ public class RestApiCFPSController {
 
 		if (currentCFPS == null) {
 			logger.error("Unable to update. CFPS with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Unable to upate. CFPS with id " + id + " not found."),
+			return new ResponseEntity<>(new CustomErrorType("Unable to upate. CFPS with id " + id + " not found."),
 					HttpStatus.NOT_FOUND);
 		}
 
@@ -108,7 +108,7 @@ public class RestApiCFPSController {
 		CFPS cfps = cfpsService.findById(id);
 		if (cfps == null) {
 			logger.error("Unable to delete. CFPS with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Unable to delete. CFPS with id " + id + " not found."),
+			return new ResponseEntity<>(new CustomErrorType("Unable to delete. CFPS with id " + id + " not found."),
 					HttpStatus.NOT_FOUND);
 		}
 		cfpsService.deleteCFPSById(id);

@@ -36,7 +36,7 @@ public class RestApiClienteController {
 	public ResponseEntity<List<Cliente>> listAllClientes() {
 		List<Cliente> clientes = clienteService.findAllClientes();
 		if (clientes.isEmpty()) {
-			return new ResponseEntity(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			// You many decide to return HttpStatus.NOT_FOUND
 		}
 		return new ResponseEntity<List<Cliente>>(clientes, HttpStatus.OK);
@@ -51,7 +51,7 @@ public class RestApiClienteController {
 		Cliente cliente = clienteService.findById(id);
 		if (cliente == null) {
 			logger.error("Cliente with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Cliente with id " + id + " not found"),
+			return new ResponseEntity<>(new CustomErrorType("Cliente with id " + id + " not found"),
 					HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<Cliente>(cliente, HttpStatus.OK);
@@ -63,7 +63,7 @@ public class RestApiClienteController {
 		Cliente cliente = clienteService.findByCnpj(cnpj);
 		if (cliente == null) {
 			logger.error("Cliente with id {} not found.", cnpj);
-			return new ResponseEntity(new CustomErrorType("Cliente with cnpj " + cnpj + " not found"),
+			return new ResponseEntity<>(new CustomErrorType("Cliente with cnpj " + cnpj + " not found"),
 					HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<Cliente>(cliente, HttpStatus.OK);
@@ -78,7 +78,7 @@ public class RestApiClienteController {
 
 		if (clienteService.isClienteExist(cliente)) {
 			logger.error("Unable to create. A Cliente with name {} already exist", cliente.getNome());
-			return new ResponseEntity(
+			return new ResponseEntity<>(
 					new CustomErrorType(
 							"Unable to create. A Cliente with name " + cliente.getNome() + " already exist."),
 					HttpStatus.CONFLICT);
@@ -101,7 +101,7 @@ public class RestApiClienteController {
 
 		if (currentCliente == null) {
 			logger.error("Unable to update. Cliente with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Unable to upate. Cliente with id " + id + " not found."),
+			return new ResponseEntity<>(new CustomErrorType("Unable to upate. Cliente with id " + id + " not found."),
 					HttpStatus.NOT_FOUND);
 		}
 
@@ -121,7 +121,7 @@ public class RestApiClienteController {
 		Cliente cliente = clienteService.findById(id);
 		if (cliente == null) {
 			logger.error("Unable to delete. Cliente with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Unable to delete. Cliente with id " + id + " not found."),
+			return new ResponseEntity<>(new CustomErrorType("Unable to delete. Cliente with id " + id + " not found."),
 					HttpStatus.NOT_FOUND);
 		}
 		clienteService.deleteClienteById(id);

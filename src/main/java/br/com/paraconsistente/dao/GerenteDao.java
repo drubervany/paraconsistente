@@ -8,4 +8,6 @@ import br.com.paraconsistente.model.Gerente;
 @Repository
 public interface GerenteDao extends JpaRepository<Gerente, Long> {
 
+	Gerente findByCpf(String cpf);
+
 }

@@ -21,8 +21,8 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return usuarioDao.findOne(id);
 	}
 
-	public Usuario findByName(String name) {
-		return usuarioDao.findByNome(name);
+	public Usuario findByCpf(String cpf) {
+		return usuarioDao.findByCpf(cpf);
 	}
 
 	public void saveUsuario(Usuario usuario) {
@@ -46,7 +46,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	public boolean isUsuarioExist(Usuario usuario) {
-		return findByName(usuario.getNome()) != null;
+		return findByCpf(usuario.getCpf()) != null;
 	}
 
 	@Override

@@ -39,7 +39,7 @@ public class RestApiProjetoController {
 	public ResponseEntity<List<Projeto>> listAllProjetos() {
 		List<Projeto> projetos = projetoService.findAllProjetos();
 		if (projetos.isEmpty()) {
-			return new ResponseEntity(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			// You many decide to return HttpStatus.NOT_FOUND
 		}
 		return new ResponseEntity<List<Projeto>>(projetos, HttpStatus.OK);
@@ -54,7 +54,7 @@ public class RestApiProjetoController {
 		Projeto projeto = projetoService.findById(id);
 		if (projeto == null) {
 			logger.error("Projeto with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Projeto with id " + id + " not found"),
+			return new ResponseEntity<>(new CustomErrorType("Projeto with id " + id + " not found"),
 					HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<Projeto>(projeto, HttpStatus.OK);
@@ -67,13 +67,6 @@ public class RestApiProjetoController {
 	public ResponseEntity<?> createProjeto(@RequestBody Projeto projeto, UriComponentsBuilder ucBuilder) {
 		logger.info("Creating Projeto : {}", projeto);
 
-		if (projetoService.isProjetoExist(projeto)) {
-			logger.error("Unable to create. A Projeto with name {} already exist", projeto.getNome());
-			return new ResponseEntity(
-					new CustomErrorType(
-							"Unable to create. A Projeto with name " + projeto.getNome() + " already exist."),
-					HttpStatus.CONFLICT);
-		}
 		projetoService.saveProjeto(projeto);
 
 		HttpHeaders headers = new HttpHeaders();
@@ -92,7 +85,7 @@ public class RestApiProjetoController {
 
 		if (currentProjeto == null) {
 			logger.error("Unable to update. Projeto with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Unable to upate. Projeto with id " + id + " not found."),
+			return new ResponseEntity<>(new CustomErrorType("Unable to upate. Projeto with id " + id + " not found."),
 					HttpStatus.NOT_FOUND);
 		}
 
@@ -115,7 +108,7 @@ public class RestApiProjetoController {
 		Projeto projeto = projetoService.findById(id);
 		if (projeto == null) {
 			logger.error("Unable to delete. Projeto with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Unable to delete. Projeto with id " + id + " not found."),
+			return new ResponseEntity<>(new CustomErrorType("Unable to delete. Projeto with id " + id + " not found."),
 					HttpStatus.NOT_FOUND);
 		}
 		projetoService.deleteProjetoById(id);

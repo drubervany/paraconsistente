@@ -9,7 +9,7 @@ public interface CFPSService {
 	
 	CFPS findById(Long id);
 
-	CFPS findByName(String name);
+	CFPS findByCPF(String cpf);
 
 	void saveCFPS(CFPS cfps);
 

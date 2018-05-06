@@ -47,14 +47,16 @@ public class RestApiMedicaoController {
 	public ResponseEntity<List<Medicao>> listAllMedicaos() {
 		List<Medicao> medicao = medicaoService.findAll();
 		if (medicao.isEmpty()) {
-			return new ResponseEntity(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			// You many decide to return HttpStatus.NOT_FOUND
 		}
 		return new ResponseEntity<List<Medicao>>(medicao, HttpStatus.OK);
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping(value = "projetos/{idProjeto}/medicoes", method = RequestMethod.GET)
-	public ResponseEntity<List<Medicao>> listAllMedicaosProjeto(@PathVariable("idProjeto") long idProjeto) {
+	public @ResponseBody ResponseEntity<List<Medicao>> listAllMedicaosProjeto(
+			@PathVariable("idProjeto") long idProjeto) {
 		Projeto projeto = projetoService.findById(idProjeto);
 		if (projeto == null) {
 			logger.error("Projeto with id {} not found.", idProjeto);
@@ -66,6 +68,7 @@ public class RestApiMedicaoController {
 		return new ResponseEntity<List<Medicao>>(medicao, HttpStatus.OK);
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping(value = "projetos/{idProjeto}/cfps/{idCfps}/medicoes/total", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<CFPS> totalMedicao(@PathVariable("idProjeto") long idProjeto,
 			@PathVariable("idCfps") long idCfps) {
@@ -94,6 +97,7 @@ public class RestApiMedicaoController {
 		return new ResponseEntity<CFPS>(cfps, HttpStatus.OK);
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping(value = "projetos/{idProjeto}/cfps/medicoes", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<List<CFPS>> cfpsMedicao(@PathVariable("idProjeto") long idProjeto) {
 
@@ -122,14 +126,14 @@ public class RestApiMedicaoController {
 		Projeto projeto = projetoService.findById(idProjeto);
 		if (projeto == null) {
 			logger.error("CFPS with id {} not found.", idCfps);
-			return new ResponseEntity(new CustomErrorType("Medicao with projeto id " + idProjeto + " not found"),
+			return new ResponseEntity<>(new CustomErrorType("Medicao with projeto id " + idProjeto + " not found"),
 					HttpStatus.NOT_FOUND);
 		}
 
 		Optional<CFPS> opCfps = projeto.getCfpss().stream().filter(c -> c.getId().longValue() == idCfps).findAny();
 		if (!opCfps.isPresent()) {
 			logger.error("CFPS with id {} not found.", idCfps);
-			return new ResponseEntity(new CustomErrorType("Medicao with CFPS id " + idCfps + " not found"),
+			return new ResponseEntity<>(new CustomErrorType("Medicao with CFPS id " + idCfps + " not found"),
 					HttpStatus.NOT_FOUND);
 		}
 
@@ -144,7 +148,7 @@ public class RestApiMedicaoController {
 		Medicao medicao = medicaoService.findById(id);
 		if (medicao == null) {
 			logger.error("CFPS with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Medicao with id " + id + " not found"),
+			return new ResponseEntity<>(new CustomErrorType("Medicao with id " + id + " not found"),
 					HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<Medicao>(medicao, HttpStatus.OK);
@@ -154,13 +158,6 @@ public class RestApiMedicaoController {
 	public ResponseEntity<?> createMedicao(@RequestBody Medicao medicao, UriComponentsBuilder ucBuilder) {
 		logger.info("Creating Medicao : {}", medicao);
 
-		if (medicaoService.isExist(medicao)) {
-			logger.error("Unable to create. A Medicao with name {} already exist", medicao.getTipo());
-			return new ResponseEntity(
-					new CustomErrorType(
-							"Unable to create. A Medicao with name " + medicao.getTipo() + " already exist."),
-					HttpStatus.CONFLICT);
-		}
 		medicaoService.save(medicao);
 
 		HttpHeaders headers = new HttpHeaders();
@@ -176,7 +173,7 @@ public class RestApiMedicaoController {
 
 		if (currentMedicao == null) {
 			logger.error("Unable to update. Medicao with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Unable to upate. Medicao with id " + id + " not found."),
+			return new ResponseEntity<>(new CustomErrorType("Unable to upate. Medicao with id " + id + " not found."),
 					HttpStatus.NOT_FOUND);
 		}
 
@@ -193,7 +190,7 @@ public class RestApiMedicaoController {
 		Medicao medicao = medicaoService.findById(id);
 		if (medicao == null) {
 			logger.error("Unable to delete. Medicao with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Unable to delete. Medicao with id " + id + " not found."),
+			return new ResponseEntity<>(new CustomErrorType("Unable to delete. Medicao with id " + id + " not found."),
 					HttpStatus.NOT_FOUND);
 		}
 		medicaoService.delete(id);

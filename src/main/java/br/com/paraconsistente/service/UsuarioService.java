@@ -9,7 +9,7 @@ public interface UsuarioService {
 	
 	Usuario findById(Long id);
 
-	Usuario findByName(String name);
+	Usuario findByCpf(String cpf);
 
 	void saveUsuario(Usuario usuario);
 

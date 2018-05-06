@@ -36,7 +36,7 @@ public class RestApiGerenteController {
 	public ResponseEntity<List<Gerente>> listAllGerentes() {
 		List<Gerente> gerentes = gerenteService.findAllGerentes();
 		if (gerentes.isEmpty()) {
-			return new ResponseEntity(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		return new ResponseEntity<List<Gerente>>(gerentes, HttpStatus.OK);
 	}
@@ -47,7 +47,7 @@ public class RestApiGerenteController {
 		Gerente gerente = gerenteService.findById(id);
 		if (gerente == null) {
 			logger.error("Gerente with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Gerente with id " + id + " not found"),
+			return new ResponseEntity<>(new CustomErrorType("Gerente with id " + id + " not found"),
 					HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<Gerente>(gerente, HttpStatus.OK);
@@ -59,7 +59,7 @@ public class RestApiGerenteController {
 
 		if (gerenteService.isGerenteExist(gerente)) {
 			logger.error("Unable to create. A Gerente with name {} already exist", gerente.getNome());
-			return new ResponseEntity(
+			return new ResponseEntity<>(
 					new CustomErrorType(
 							"Unable to create. A Gerente with name " + gerente.getNome() + " already exist."),
 					HttpStatus.CONFLICT);
@@ -79,7 +79,7 @@ public class RestApiGerenteController {
 
 		if (currentGerente == null) {
 			logger.error("Unable to update. Gerente with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Unable to upate. Gerente with id " + id + " not found."),
+			return new ResponseEntity<>(new CustomErrorType("Unable to upate. Gerente with id " + id + " not found."),
 					HttpStatus.NOT_FOUND);
 		}
 
@@ -96,7 +96,7 @@ public class RestApiGerenteController {
 		Gerente gerente = gerenteService.findById(id);
 		if (gerente == null) {
 			logger.error("Unable to delete. Gerente with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Unable to delete. Gerente with id " + id + " not found."),
+			return new ResponseEntity<>(new CustomErrorType("Unable to delete. Gerente with id " + id + " not found."),
 					HttpStatus.NOT_FOUND);
 		}
 		gerenteService.deleteGerenteById(id);

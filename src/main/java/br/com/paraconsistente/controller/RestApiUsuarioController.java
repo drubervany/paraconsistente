@@ -35,7 +35,7 @@ public class RestApiUsuarioController {
 	public ResponseEntity<List<Usuario>> listAllUsuarios() {
 		List<Usuario> usuarios = usuarioService.findAllUsuarios();
 		if (usuarios.isEmpty()) {
-			return new ResponseEntity(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			// You many decide to return HttpStatus.NOT_FOUND
 		}
 		return new ResponseEntity<List<Usuario>>(usuarios, HttpStatus.OK);
@@ -50,7 +50,7 @@ public class RestApiUsuarioController {
 		Usuario usuario = usuarioService.findById(id);
 		if (usuario == null) {
 			logger.error("Usuario with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Usuario with id " + id + " not found"),
+			return new ResponseEntity<>(new CustomErrorType("Usuario with id " + id + " not found"),
 					HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
@@ -63,7 +63,7 @@ public class RestApiUsuarioController {
 		Usuario usuario = usuarioService.findByEmailAndSenha(email, senha);
 		if (usuario == null) {
 			logger.error("Usuario with id {} not found.", email);
-			return new ResponseEntity(new CustomErrorType("Usuario with id " + email + " not found"),
+			return new ResponseEntity<>(new CustomErrorType("Usuario with id " + email + " not found"),
 					HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
@@ -78,7 +78,7 @@ public class RestApiUsuarioController {
 
 		if (usuarioService.isUsuarioExist(usuario)) {
 			logger.error("Unable to create. A Usuario with name {} already exist", usuario.getNome());
-			return new ResponseEntity(
+			return new ResponseEntity<>(
 					new CustomErrorType(
 							"Unable to create. A Usuario with name " + usuario.getNome() + " already exist."),
 					HttpStatus.CONFLICT);
@@ -101,7 +101,7 @@ public class RestApiUsuarioController {
 
 		if (currentUsuario == null) {
 			logger.error("Unable to update. Usuario with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Unable to upate. Usuario with id " + id + " not found."),
+			return new ResponseEntity<>(new CustomErrorType("Unable to upate. Usuario with id " + id + " not found."),
 					HttpStatus.NOT_FOUND);
 		}
 
@@ -121,7 +121,7 @@ public class RestApiUsuarioController {
 		Usuario usuario = usuarioService.findById(id);
 		if (usuario == null) {
 			logger.error("Unable to delete. Usuario with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("Unable to delete. Usuario with id " + id + " not found."),
+			return new ResponseEntity<>(new CustomErrorType("Unable to delete. Usuario with id " + id + " not found."),
 					HttpStatus.NOT_FOUND);
 		}
 		usuarioService.deleteUsuarioById(id);
