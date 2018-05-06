@@ -57,6 +57,7 @@ public class RestApiMedicaoController {
 	@RequestMapping(value = "projetos/{idProjeto}/medicoes", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<List<Medicao>> listAllMedicaosProjeto(
 			@PathVariable("idProjeto") long idProjeto) {
+		
 		Projeto projeto = projetoService.findById(idProjeto);
 		if (projeto == null) {
 			logger.error("Projeto with id {} not found.", idProjeto);
@@ -88,9 +89,9 @@ public class RestApiMedicaoController {
 		}
 
 		CFPS cfps = opCfps.get();
-		List<Medicao> medicao = medicaoService.findByCfps(cfps);
+		List<Medicao> medicao = medicaoService.findByProjetoAndCfps(projeto, cfps);
 
-		int numeroPontos = medicao.stream().mapToInt(m -> m.getTotalPonfoFuncao()).sum();
+		int numeroPontos = medicao.stream().filter(c -> c.getId().longValue() == idCfps).mapToInt(m -> m.getTotalPonfoFuncao()).sum();
 
 		cfps.setNumeroPontos(numeroPontos);
 
@@ -110,7 +111,7 @@ public class RestApiMedicaoController {
 
 		List<CFPS> listaCfps = new ArrayList<>();
 		projeto.getCfpss().forEach(cfps -> {
-			List<Medicao> medicao = medicaoService.findByCfps(cfps);
+			List<Medicao> medicao = medicaoService.findByProjetoAndCfps(projeto, cfps);
 			int numeroPontos = medicao.stream().mapToInt(m -> m.getTotalPonfoFuncao()).sum();
 			cfps.setNumeroPontos(numeroPontos);
 			listaCfps.add(cfps);
@@ -138,7 +139,7 @@ public class RestApiMedicaoController {
 		}
 
 		CFPS cfps = opCfps.get();
-		List<Medicao> medicao = medicaoService.findByCfps(cfps);
+		List<Medicao> medicao = medicaoService.findByProjetoAndCfps(projeto, cfps);
 		return new ResponseEntity<List<Medicao>>(medicao, HttpStatus.OK);
 	}
 

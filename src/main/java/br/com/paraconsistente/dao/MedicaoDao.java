@@ -19,4 +19,6 @@ public interface MedicaoDao extends JpaRepository<Medicao, Long> {
 	
 	List<Medicao> findByProjeto(Projeto projeto);
 
+	List<Medicao> findByProjetoAndCfps(Projeto projeto, CFPS cfps);
+
 }
