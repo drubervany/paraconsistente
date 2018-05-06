@@ -60,7 +60,7 @@ public class RestApiFuncaoController {
 		return new ResponseEntity<Funcao>(funcao, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "projeto/{idProjeto}/cfps/{idCfps}/funcoes", method = RequestMethod.GET)
+	@RequestMapping(value = "projetos/{idProjeto}/cfps/{idCfps}/funcoes", method = RequestMethod.GET)
 	public ResponseEntity<?> getProjetoCFPS(@PathVariable("idProjeto") long idProjeto, @PathVariable("idCfps") long idCfps) {
 		logger.info("Fetching getProjetoCFPS with id {}", idProjeto);
 		
@@ -77,7 +77,14 @@ public class RestApiFuncaoController {
 			return new ResponseEntity<>(new CustomErrorType("CFPS with id " + idCfps + " not found"),
 					HttpStatus.NOT_FOUND);
 		}
+		
 		List<Funcao> funcoes = funcaoService.findByProjetoAndCfps(projeto, cfps);
+		if (funcoes == null) {
+			logger.error("Funcao not found.");
+			return new ResponseEntity<>(new CustomErrorType("Funcao not found"),
+					HttpStatus.NOT_FOUND);
+		}
+		
 		return new ResponseEntity<List<Funcao>>(funcoes, HttpStatus.OK);
 	}
 	
