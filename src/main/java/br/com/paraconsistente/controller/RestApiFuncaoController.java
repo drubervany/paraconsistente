@@ -95,7 +95,7 @@ public class RestApiFuncaoController {
 		funcaoService.save(funcao);
 
 		HttpHeaders headers = new HttpHeaders();
-		headers.setLocation(ucBuilder.path("/api/projetos/{idProjeto}/cfps/{idCfps}/funcoes").buildAndExpand(funcao.getProjeto().getId(), funcao.getCfps().getId()).toUri());
+		headers.setLocation(ucBuilder.path("/api/funcoes/{id}").buildAndExpand(funcao.getId()).toUri());
 		return new ResponseEntity<String>(headers, HttpStatus.CREATED);
 	}
 
