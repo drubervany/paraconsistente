@@ -57,7 +57,7 @@ public class RestApiMedicaoController {
 	@RequestMapping(value = "projetos/{idProjeto}/medicoes", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<List<Medicao>> listAllMedicaosProjeto(
 			@PathVariable("idProjeto") long idProjeto) {
-		
+
 		Projeto projeto = projetoService.findById(idProjeto);
 		if (projeto == null) {
 			logger.error("Projeto with id {} not found.", idProjeto);
@@ -91,7 +91,7 @@ public class RestApiMedicaoController {
 		CFPS cfps = opCfps.get();
 		List<Medicao> medicao = medicaoService.findByProjetoAndCfps(projeto, cfps);
 
-		int numeroPontos = medicao.stream().filter(c -> c.getId().longValue() == idCfps).mapToInt(m -> m.getTotalPonfoFuncao()).sum();
+		int numeroPontos = medicao.stream().mapToInt(m -> m.getTotalPonfoFuncao()).sum();
 
 		cfps.setNumeroPontos(numeroPontos);
 
