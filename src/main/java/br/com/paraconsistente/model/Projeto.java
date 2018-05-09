@@ -38,6 +38,9 @@ public class Projeto implements Serializable {
 	private Gerente gerente;
 
 	@ManyToOne
+	private Gerente gerenteBackup;
+
+	@ManyToOne
 	private Cliente cliente;
 
 	private String descricao;
@@ -154,6 +157,14 @@ public class Projeto implements Serializable {
 
 	public void setCfpsIA(CFPS cfpsIA) {
 		this.cfpsIA = cfpsIA;
+	}
+
+	public Gerente getGerenteBackup() {
+		return gerenteBackup;
+	}
+
+	public void setGerenteBackup(Gerente gerenteBackup) {
+		this.gerenteBackup = gerenteBackup;
 	}
 
 }
