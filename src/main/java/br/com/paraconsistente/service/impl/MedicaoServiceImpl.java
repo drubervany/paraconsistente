@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.paraconsistente.dao.MedicaoDao;
+import br.com.paraconsistente.enuns.StatusMedicaoEnum;
 import br.com.paraconsistente.enuns.TipoFuncaoEnum;
 import br.com.paraconsistente.model.CFPS;
 import br.com.paraconsistente.model.Medicao;
@@ -61,6 +62,16 @@ public class MedicaoServiceImpl implements MedicaoService {
 	@Override
 	public List<Medicao> findByProjetoAndCfps(Projeto projeto, CFPS cfps) {
 		return medicaoDao.findByProjetoAndCfps(projeto, cfps);
+	}
+
+	@Override
+	public void finalizar(Projeto projeto, CFPS cfps) {
+		
+		List<Medicao> medicoes = findByProjeto(projeto);
+		medicoes.forEach(medicao -> {
+			medicao.setStatus(StatusMedicaoEnum.CONCLUIDO);
+			this.update(medicao);
+		});
 	}
 
 }

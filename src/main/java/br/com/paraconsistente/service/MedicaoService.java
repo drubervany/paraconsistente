@@ -28,4 +28,6 @@ public interface MedicaoService {
 	List<Medicao> findByProjeto(Projeto projeto);
 
 	List<Medicao> findByProjetoAndCfps(Projeto projeto, CFPS cfps);
+
+	void finalizar(Projeto projeto, CFPS cfps);
 }

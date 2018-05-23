@@ -1,7 +1,9 @@
 package br.com.paraconsistente.enuns;
 
 public enum StatusProjetoEnum {
-	CADASTRADO, 
+	PENDENTE, 
+	CONTAGEM,
 	APROVADO,
-	CONCLUIDO
+	REPROVADO,
+	CONTADO
 }

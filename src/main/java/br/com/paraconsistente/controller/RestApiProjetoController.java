@@ -19,7 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.paraconsistente.enuns.StatusProjetoEnum;
+import br.com.paraconsistente.model.CFPS;
+import br.com.paraconsistente.model.Medicao;
 import br.com.paraconsistente.model.Projeto;
+import br.com.paraconsistente.service.MedicaoService;
 import br.com.paraconsistente.service.ProjetoService;
 import br.com.paraconsistente.util.CustomErrorType;
 
@@ -32,26 +35,28 @@ public class RestApiProjetoController {
 	@Autowired
 	ProjetoService projetoService;
 
-	// -------------------Retrieve All
-	// Projetos---------------------------------------------
+	@Autowired
+	MedicaoService medicaoService;
 
 	@RequestMapping(value = "/projetos/", method = RequestMethod.GET)
 	public ResponseEntity<List<Projeto>> listAllProjetos() {
 		List<Projeto> projetos = projetoService.findAllProjetos();
 		if (projetos.isEmpty()) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-			// You many decide to return HttpStatus.NOT_FOUND
 		}
+
+		projetos.forEach(projeto -> {
+			atualizaCfpsPontoFuncao(projeto);
+		});
+
 		return new ResponseEntity<List<Projeto>>(projetos, HttpStatus.OK);
 	}
-
-	// -------------------Retrieve Single
-	// Projeto------------------------------------------
 
 	@RequestMapping(value = "/projetos/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> getProjeto(@PathVariable("id") long id) {
 		logger.info("Fetching Projeto with id {}", id);
 		Projeto projeto = projetoService.findById(id);
+		atualizaCfpsPontoFuncao(projeto);
 		if (projeto == null) {
 			logger.error("Projeto with id {} not found.", id);
 			return new ResponseEntity<>(new CustomErrorType("Projeto with id " + id + " not found"),
@@ -59,9 +64,6 @@ public class RestApiProjetoController {
 		}
 		return new ResponseEntity<Projeto>(projeto, HttpStatus.OK);
 	}
-
-	// -------------------Create a
-	// Projeto-------------------------------------------
 
 	@RequestMapping(value = "/projetos/", method = RequestMethod.POST)
 	public ResponseEntity<?> createProjeto(@RequestBody Projeto projeto, UriComponentsBuilder ucBuilder) {
@@ -73,9 +75,6 @@ public class RestApiProjetoController {
 		headers.setLocation(ucBuilder.path("/api/projetos/{id}").buildAndExpand(projeto.getId()).toUri());
 		return new ResponseEntity<String>(headers, HttpStatus.CREATED);
 	}
-
-	// ------------------- Update a Projeto
-	// ------------------------------------------------
 
 	@RequestMapping(value = "/projetos/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<?> updateProjeto(@PathVariable("id") long id, @RequestBody Projeto projeto) {
@@ -98,9 +97,6 @@ public class RestApiProjetoController {
 		return new ResponseEntity<Projeto>(currentProjeto, HttpStatus.OK);
 	}
 
-	// ------------------- Delete a
-	// Projeto-----------------------------------------
-
 	@RequestMapping(value = "/projetos/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<?> deleteProjeto(@PathVariable("id") long id) {
 		logger.info("Fetching & Deleting Projeto with id {}", id);
@@ -114,8 +110,6 @@ public class RestApiProjetoController {
 		projetoService.deleteProjetoById(id);
 		return new ResponseEntity<Projeto>(HttpStatus.NO_CONTENT);
 	}
-
-	// ------------------- Delete All Projetos-----------------------------
 
 	@RequestMapping(value = "/projetos/", method = RequestMethod.DELETE)
 	public ResponseEntity<Projeto> deleteAllProjetos() {
@@ -139,16 +133,30 @@ public class RestApiProjetoController {
 
 		return new ResponseEntity<List<Map<String, String>>>(lista, HttpStatus.OK);
 	}
-	
+
 	@RequestMapping(value = "/projetos/status/{status}", method = RequestMethod.GET)
 	public ResponseEntity<List<Projeto>> retornarProjetoStatus(@PathVariable("status") String status) {
 		logger.info("retornarProjetoStatus All Projetos");
-		
+
 		List<Projeto> projetos = projetoService.findByStatus(StatusProjetoEnum.valueOf(status));
 		if (projetos.isEmpty())
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-		
+
+		projetos.forEach(projeto -> {
+			atualizaCfpsPontoFuncao(projeto);
+		});
+
 		return new ResponseEntity<List<Projeto>>(projetos, HttpStatus.OK);
+	}
+
+	private void atualizaCfpsPontoFuncao(Projeto projeto) {
+		List<CFPS> listaCfps = new ArrayList<>();
+		projeto.getCfpss().forEach(cfps -> {
+			List<Medicao> medicao = medicaoService.findByProjetoAndCfps(projeto, cfps);
+			int numeroPontos = medicao.stream().mapToInt(m -> m.getTotalPonfoFuncao()).sum();
+			cfps.setNumeroPontos(numeroPontos);
+			listaCfps.add(cfps);
+		});
 	}
 
 }

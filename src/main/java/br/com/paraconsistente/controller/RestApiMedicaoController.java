@@ -197,5 +197,28 @@ public class RestApiMedicaoController {
 		medicaoService.delete(id);
 		return new ResponseEntity<Medicao>(HttpStatus.NO_CONTENT);
 	}
+	
+	@RequestMapping(value = "projetos/{idProjeto}/cfps/{idCfps}/medicoes/finalizar", method = RequestMethod.GET)
+	public ResponseEntity<?> getMedicaoFinalizar(@PathVariable("id") long idProjeto, @PathVariable("idCfps") long idCfps) {
+		
+		Projeto projeto = projetoService.findById(idProjeto);
+		if (projeto == null) {
+			logger.error("CFPS with id {} not found.", idCfps);
+			return new ResponseEntity<>(new CustomErrorType("Medicao with projeto id " + idProjeto + " not found"),
+					HttpStatus.NOT_FOUND);
+		}
+
+		Optional<CFPS> opCfps = projeto.getCfpss().stream().filter(c -> c.getId().longValue() == idCfps).findAny();
+		if (!opCfps.isPresent()) {
+			logger.error("CFPS with id {} not found.", idCfps);
+			return new ResponseEntity<>(new CustomErrorType("Medicao with CFPS id " + idCfps + " not found"),
+					HttpStatus.NOT_FOUND);
+		}
+
+		CFPS cfps = opCfps.get();
+		
+		medicaoService.finalizar(projeto, cfps);
+		return new ResponseEntity<Medicao>(HttpStatus.NO_CONTENT);
+	}
 
 }

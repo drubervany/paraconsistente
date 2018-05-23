@@ -1,8 +1,8 @@
 package br.com.paraconsistente.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.br.CPF;
 
 @Entity
@@ -32,7 +31,11 @@ public class CFPS implements Serializable {
 	private String email;
 
 	private Integer numeroPontos = 0;
-
+	
+	private BigDecimal favoravel = BigDecimal.ZERO;
+	
+	private BigDecimal desfavoravel = BigDecimal.ZERO;
+	
 	public Long getId() {
 		return id;
 	}
@@ -71,5 +74,21 @@ public class CFPS implements Serializable {
 
 	public void setNumeroPontos(Integer numeroPontos) {
 		this.numeroPontos = numeroPontos;
+	}
+
+	public BigDecimal getFavoravel() {
+		return favoravel;
+	}
+
+	public void setFavoravel(BigDecimal favoravel) {
+		this.favoravel = favoravel;
+	}
+
+	public BigDecimal getDesfavoravel() {
+		return desfavoravel;
+	}
+
+	public void setDesfavoravel(BigDecimal desfavoravel) {
+		this.desfavoravel = desfavoravel;
 	}
 }

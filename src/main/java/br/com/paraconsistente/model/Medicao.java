@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import br.com.paraconsistente.enuns.StatusMedicaoEnum;
 import br.com.paraconsistente.enuns.TipoFuncaoEnum;
 
 @Entity
@@ -38,6 +39,9 @@ public class Medicao implements Serializable {
 
 	@Enumerated(EnumType.STRING)
 	private TipoFuncaoEnum tipo;
+	
+	@Enumerated(EnumType.STRING)
+	private StatusMedicaoEnum status;
 
 	private Integer qtdeDados = 0;
 
@@ -158,6 +162,14 @@ public class Medicao implements Serializable {
 			}
 		});
 		return this.totalPonfoFuncao;
+	}
+
+	public StatusMedicaoEnum getStatus() {
+		return status;
+	}
+
+	public void setStatus(StatusMedicaoEnum status) {
+		this.status = status;
 	}
 
 }
