@@ -26,6 +26,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.zaxxer.hikari.HikariDataSource;
 
+/**
+ * The Class JpaConfiguration.
+ * Resposavel por conectar ao banco de dados
+ */
 @Configuration
 @EnableJpaRepositories(basePackages = "br.com.paraconsistente.dao",
 		entityManagerFactoryRef = "entityManagerFactory",
@@ -33,12 +37,19 @@ import com.zaxxer.hikari.HikariDataSource;
 @EnableTransactionManagement
 public class JpaConfiguration {
 
+	/** The environment. */
 	@Autowired
 	private Environment environment;
 
+	/** The max pool size. */
 	@Value("${datasource.sampleapp.maxPoolSize:10}")
 	private int maxPoolSize;
 
+	/**
+	 * Data source properties.
+	 *
+	 * @return the data source properties
+	 */
 	/*
 	 * Populate SpringBoot DataSourceProperties object directly from application.yml 
 	 * based on prefix.Thanks to .yml, Hierachical data is mapped out of the box with matching-name
@@ -51,6 +62,11 @@ public class JpaConfiguration {
 		return new DataSourceProperties();
 	}
 
+	/**
+	 * Data source.
+	 *
+	 * @return the data source
+	 */
 	/*
 	 * Configure HikariCP pooled DataSource.
 	 */
@@ -69,6 +85,12 @@ public class JpaConfiguration {
 			return dataSource;
 	}
 
+	/**
+	 * Entity manager factory.
+	 *
+	 * @return the local container entity manager factory bean
+	 * @throws NamingException the naming exception
+	 */
 	/*
 	 * Entity Manager Factory setup.
 	 */
@@ -82,6 +104,11 @@ public class JpaConfiguration {
 		return factoryBean;
 	}
 
+	/**
+	 * Jpa vendor adapter.
+	 *
+	 * @return the jpa vendor adapter
+	 */
 	/*
 	 * Provider specific adapter.
 	 */
@@ -91,6 +118,11 @@ public class JpaConfiguration {
 		return hibernateJpaVendorAdapter;
 	}
 
+	/**
+	 * Jpa properties.
+	 *
+	 * @return the properties
+	 */
 	/*
 	 * Here you can specify any provider specific properties.
 	 */
@@ -106,6 +138,12 @@ public class JpaConfiguration {
 		return properties;
 	}
 
+	/**
+	 * Transaction manager.
+	 *
+	 * @param emf the emf
+	 * @return the platform transaction manager
+	 */
 	@Bean
 	@Autowired
 	public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
