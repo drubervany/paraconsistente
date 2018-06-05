@@ -13,8 +13,6 @@ insert into CFPS(cpf, email, nome, numeroPontos, contador)values('33937256884', 
 insert into USUARIO(cpf, email, nome, senha, cargo, GERENTE_id, CFPS_ID)values('33937256881', 'teste@teste.com.br', 'Usuario GERENTE Teste', '123456', 'GERENTE', 1, 1)
 insert into USUARIO(cpf, email, nome, senha, cargo)values('33937256881', 'cfps@teste.com.br', 'Usuario CFPS Teste', '123456', 'CFPS')
 
-
-
 insert into PROJETO(nome, descricao, pontosFuncao, cliente_id, gerente_id, status, cfps_id, gce, gco)values('nome', 'descricao', 0, 1, 1, 'PENDENTE', 1, 0, 0)
 insert into PROJETO_CFPS(PROJETO_ID, CFPSS_ID)values(1, 1)
 
