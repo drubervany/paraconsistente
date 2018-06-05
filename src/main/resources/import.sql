@@ -1,5 +1,6 @@
 --
 -- Dados iniciais
+
 --
 insert into GERENTE(cpf, email, nome)values('33937256881', 'gerente@teste.com', 'Gerente Teste')
 
