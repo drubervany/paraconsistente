@@ -20,7 +20,7 @@ server:
 #      format_sql: true
 #      dialect: org.hibernate.dialect.H2Dialect
       
-#Prod
+#Prod - SOMENTE NA INTERNET
 spring:
   profiles: local, default
 datasource:
