@@ -39,7 +39,7 @@ public class Medicao implements Serializable {
 
 	@Enumerated(EnumType.STRING)
 	private TipoFuncaoEnum tipo;
-	
+
 	@Enumerated(EnumType.STRING)
 	private StatusMedicaoEnum status;
 
@@ -171,7 +171,6 @@ public class Medicao implements Serializable {
 	public void setStatus(StatusMedicaoEnum status) {
 		this.status = status;
 	}
-
 }
 
 class Complexidade {

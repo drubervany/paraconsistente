@@ -10,4 +10,6 @@ public interface CFPSDao extends JpaRepository<CFPS, Long> {
 
 	CFPS findByCpf(String cpf);
 
+	CFPS findByCnpj(String cnpj);
+
 }

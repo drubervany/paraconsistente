@@ -148,6 +148,23 @@ public class RestApiProjetoController {
 
 		return new ResponseEntity<List<Projeto>>(projetos, HttpStatus.OK);
 	}
+	
+
+	@RequestMapping(value = "/projetos/ia/{id}", method = RequestMethod.GET)
+	public ResponseEntity<?> calcularIA(@PathVariable("id") long id) {
+		logger.info("Fetching Projeto with id {}", id);
+		Projeto projeto = projetoService.findById(id);
+		atualizaCfpsPontoFuncao(projeto);
+		if (projeto == null) {
+			logger.error("Projeto with id {} not found.", id);
+			return new ResponseEntity<>(new CustomErrorType("Projeto with id " + id + " not found"),
+					HttpStatus.NOT_FOUND);
+		}
+		
+		Projeto calcularIA = projetoService.calcularIA(projeto);
+		
+		return new ResponseEntity<Projeto>(calcularIA, HttpStatus.OK);
+	}
 
 	private void atualizaCfpsPontoFuncao(Projeto projeto) {
 		List<CFPS> listaCfps = new ArrayList<>();
@@ -158,5 +175,4 @@ public class RestApiProjetoController {
 			listaCfps.add(cfps);
 		});
 	}
-
 }

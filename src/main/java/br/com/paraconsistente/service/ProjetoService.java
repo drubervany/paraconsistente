@@ -25,4 +25,6 @@ public interface ProjetoService {
 	boolean isProjetoExist(Projeto Projeto);
 
 	List<Projeto> findByStatus(StatusProjetoEnum status);
+
+	Projeto calcularIA(Projeto projeto);
 }

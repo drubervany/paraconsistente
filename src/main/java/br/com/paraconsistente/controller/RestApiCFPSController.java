@@ -1,6 +1,7 @@
 package br.com.paraconsistente.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import br.com.paraconsistente.enuns.TipoContadorEnum;
 import br.com.paraconsistente.model.CFPS;
 import br.com.paraconsistente.service.CFPSService;
 import br.com.paraconsistente.util.CustomErrorType;
@@ -33,16 +35,15 @@ public class RestApiCFPSController {
 
 	@RequestMapping(value = "/cfps/", method = RequestMethod.GET)
 	public ResponseEntity<List<CFPS>> listAllCFPSs() {
-		List<CFPS> cfps = cfpsService.findAllCFPSs();
+		List<CFPS> cfps = cfpsService.findAllCFPSs().stream()
+				.filter(s -> TipoContadorEnum.FORNECEDOR.equals(s.getContador())).collect(Collectors.toList());
 		if (cfps.isEmpty()) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			// You many decide to return HttpStatus.NOT_FOUND
 		}
 		return new ResponseEntity<List<CFPS>>(cfps, HttpStatus.OK);
 	}
-
-	// -------------------Retrieve Single
-	// CFPS------------------------------------------
+	
 
 	@RequestMapping(value = "/cfps/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> getCFPS(@PathVariable("id") long id) {
@@ -50,8 +51,18 @@ public class RestApiCFPSController {
 		CFPS cfps = cfpsService.findById(id);
 		if (cfps == null) {
 			logger.error("CFPS with id {} not found.", id);
-			return new ResponseEntity<>(new CustomErrorType("CFPS with id " + id + " not found"),
-					HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>(new CustomErrorType("CFPS with id " + id + " not found"), HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<CFPS>(cfps, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/cfps/cpf/{cpf}", method = RequestMethod.GET)
+	public ResponseEntity<?> getCPF(@PathVariable("cpf") String cpf) {
+		logger.info("Fetching CFPS with cpf {}", cpf);
+		CFPS cfps = cfpsService.findByCPF(cpf);
+		if (cfps == null) {
+			logger.error("CFPS with id {} not found.", cpf);
+			return new ResponseEntity<>(new CustomErrorType("CFPS with id " + cpf + " not found"), HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<CFPS>(cfps, HttpStatus.OK);
 	}
@@ -66,8 +77,7 @@ public class RestApiCFPSController {
 		if (cfpsService.isCFPSExist(cfps)) {
 			logger.error("Unable to create. A CFPS with name {} already exist", cfps.getNome());
 			return new ResponseEntity<>(
-					new CustomErrorType(
-							"Unable to create. A CFPS with name " + cfps.getNome() + " already exist."),
+					new CustomErrorType("Unable to create. A CFPS with name " + cfps.getNome() + " already exist."),
 					HttpStatus.CONFLICT);
 		}
 		cfpsService.saveCFPS(cfps);

@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +15,8 @@ import javax.persistence.Table;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.br.CPF;
+
+import br.com.paraconsistente.enuns.CargoEnum;
 
 @Entity
 @Table(name = "USUARIO")
@@ -34,8 +38,14 @@ public class Usuario implements Serializable {
 	@Email
 	private String email;
 
+	@Enumerated(EnumType.STRING)
+	private CargoEnum cargo;
+	
 	@ManyToOne
-	private Cargo cargo;
+	private CFPS cfps;
+	
+	@ManyToOne
+	private Gerente gerente;
 
 	private String senha;
 
@@ -71,11 +81,11 @@ public class Usuario implements Serializable {
 		this.email = email;
 	}
 
-	public Cargo getCargo() {
+	public CargoEnum getCargo() {
 		return cargo;
 	}
 
-	public void setCargo(Cargo cargo) {
+	public void setCargo(CargoEnum cargo) {
 		this.cargo = cargo;
 	}
 
@@ -85,6 +95,22 @@ public class Usuario implements Serializable {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public CFPS getCfps() {
+		return cfps;
+	}
+
+	public void setCfps(CFPS cfps) {
+		this.cfps = cfps;
+	}
+
+	public Gerente getGerente() {
+		return gerente;
+	}
+
+	public void setGerente(Gerente gerente) {
+		this.gerente = gerente;
 	}
 
 }

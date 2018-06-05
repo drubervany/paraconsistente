@@ -4,13 +4,18 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.br.CNPJ;
 import org.hibernate.validator.constraints.br.CPF;
+
+import br.com.paraconsistente.enuns.TipoContadorEnum;
 
 @Entity
 @Table(name = "CFPS")
@@ -26,6 +31,9 @@ public class CFPS implements Serializable {
 
 	@CPF
 	private String cpf;
+	
+	@CNPJ
+	private String cnpj;
 
 	@Email
 	private String email;
@@ -35,6 +43,9 @@ public class CFPS implements Serializable {
 	private BigDecimal favoravel = BigDecimal.ZERO;
 	
 	private BigDecimal desfavoravel = BigDecimal.ZERO;
+	
+	@Enumerated(EnumType.STRING)
+	private TipoContadorEnum contador;
 	
 	public Long getId() {
 		return id;
@@ -90,5 +101,21 @@ public class CFPS implements Serializable {
 
 	public void setDesfavoravel(BigDecimal desfavoravel) {
 		this.desfavoravel = desfavoravel;
+	}
+	
+	public TipoContadorEnum getContador() {
+		return contador;
+	}
+
+	public void setContador(TipoContadorEnum contador) {
+		this.contador = contador;
+	}
+
+	public String getCnpj() {
+		return cnpj;
+	}
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 }

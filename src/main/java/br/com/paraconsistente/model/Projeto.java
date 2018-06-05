@@ -18,11 +18,15 @@ import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import br.com.paraconsistente.enuns.StatusProjetoEnum;
 
 @Entity
 @Table(name = "PROJETO")
 public class Projeto implements Serializable {
+
+	private static final double NIVEL_EXIGENCIA = 0.55;
 
 	private static final long serialVersionUID = 1L;
 
@@ -62,6 +66,12 @@ public class Projeto implements Serializable {
 	private CFPS cfpsIA;
 
 	private Integer pontosFuncao;
+
+	private String Resultante;
+
+	private double gce;
+
+	private double gco;
 
 	public Gerente getGerente() {
 		return gerente;
@@ -167,4 +177,41 @@ public class Projeto implements Serializable {
 		this.gerenteBackup = gerenteBackup;
 	}
 
+	public String getResultante() {
+		return Resultante;
+	}
+
+	public void setResultante(String resultante) {
+		Resultante = resultante;
+	}
+
+	public double getGco() {
+		return gco;
+	}
+
+	public void setGco(double gco) {
+		this.gco = gco;
+	}
+
+	public double getGce() {
+		return gce;
+	}
+
+	public void setGce(double gce) {
+		this.gce = gce;
+	}
+
+	@JsonProperty
+	public String getAnaliseGlobal() {
+		if (this.gce == 0)
+			return null;
+		return this.gce <= NIVEL_EXIGENCIA ? "Recontar Projeto" : "Fazer Projeto";
+	}
+
+	@JsonProperty
+	public String getGeral() {
+		if (this.gce == 0 && this.gco == 0)
+			return null;
+		return this.gce <= NIVEL_EXIGENCIA ? "INVIÁVEL" : this.gco >= NIVEL_EXIGENCIA ? "VIÁVEL" : "NÃO CONCLUSIVO";
+	}
 }

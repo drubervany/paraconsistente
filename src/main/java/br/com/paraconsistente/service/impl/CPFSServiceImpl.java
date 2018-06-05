@@ -49,4 +49,9 @@ public class CPFSServiceImpl implements CFPSService {
 		return findByCPF(cfps.getCpf()) != null;
 	}
 
+	@Override
+	public CFPS findByCNPJ(String cnpj) {
+		return cfpsDao.findByCnpj(cnpj);
+	}
+
 }

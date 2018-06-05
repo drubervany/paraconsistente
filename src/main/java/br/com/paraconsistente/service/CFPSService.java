@@ -22,4 +22,6 @@ public interface CFPSService {
 	List<CFPS> findAllCFPSs();
 
 	boolean isCFPSExist(CFPS CFPS);
+
+	CFPS findByCNPJ(String cnpj);
 }
