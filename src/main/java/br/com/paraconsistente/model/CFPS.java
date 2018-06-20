@@ -29,10 +29,10 @@ public class CFPS implements Serializable {
 
 	private String nome;
 
-	@CPF
+	//@CPF
 	private String cpf;
 	
-	@CNPJ
+	//@CNPJ
 	private String cnpj;
 
 	@Email
