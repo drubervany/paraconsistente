@@ -3,6 +3,7 @@ package br.com.paraconsistente.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,8 +55,8 @@ public class RestApiMedicaoController {
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	@RequestMapping(value = "projetos/{idProjeto}/medicoes", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<List<Medicao>> listAllMedicaosProjeto(
+	@RequestMapping(value = "/projetos/{idProjeto}/cfps/{idCfps}medicoes", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<List<Medicao>> listAllMedicaosProjeto(@PathVariable("idCfps") Integer idCfps,
 			@PathVariable("idProjeto") long idProjeto) {
 
 		Projeto projeto = projetoService.findById(idProjeto);
@@ -64,7 +65,8 @@ public class RestApiMedicaoController {
 			return new ResponseEntity(new CustomErrorType("Medicao with projeto id " + idProjeto + " not found"),
 					HttpStatus.NOT_FOUND);
 		}
-		List<Medicao> medicao = medicaoService.findByProjeto(projeto);
+		List<Medicao> medicao = medicaoService.findByProjeto(projeto).stream()
+				.filter(m -> m.getCfps().getId().intValue() == idCfps.intValue()).collect(Collectors.toList());
 
 		return new ResponseEntity<List<Medicao>>(medicao, HttpStatus.OK);
 	}
@@ -197,10 +199,11 @@ public class RestApiMedicaoController {
 		medicaoService.delete(id);
 		return new ResponseEntity<Medicao>(HttpStatus.NO_CONTENT);
 	}
-	
+
 	@RequestMapping(value = "projetos/{idProjeto}/cfps/{idCfps}/medicoes/finalizar", method = RequestMethod.GET)
-	public ResponseEntity<?> getMedicaoFinalizar(@PathVariable("id") long idProjeto, @PathVariable("idCfps") long idCfps) {
-		
+	public ResponseEntity<?> getMedicaoFinalizar(@PathVariable("id") long idProjeto,
+			@PathVariable("idCfps") long idCfps) {
+
 		Projeto projeto = projetoService.findById(idProjeto);
 		if (projeto == null) {
 			logger.error("CFPS with id {} not found.", idCfps);
@@ -216,7 +219,7 @@ public class RestApiMedicaoController {
 		}
 
 		CFPS cfps = opCfps.get();
-		
+
 		medicaoService.finalizar(projeto, cfps);
 		return new ResponseEntity<Medicao>(HttpStatus.NO_CONTENT);
 	}
