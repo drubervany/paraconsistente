@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,18 +39,27 @@ public class RestApiProjetoController {
 	@Autowired
 	MedicaoService medicaoService;
 
-	@RequestMapping(value = "/projetos/", method = RequestMethod.GET)
-	public ResponseEntity<List<Projeto>> listAllProjetos() {
-		List<Projeto> projetos = projetoService.findAllProjetos();
-		if (projetos.isEmpty()) {
+	@RequestMapping(value = "/cfps/{cfps}/projetos", method = RequestMethod.GET)
+	public ResponseEntity<?> listAllProjetos(@PathVariable("cfps") Long cfps) {
+		List<Projeto> retorno = new ArrayList<>();
+
+		projetoService.findAllProjetos().forEach(projeto -> {
+			Optional<CFPS> cfpsOp = projeto.getCfpss().stream().filter(s -> s.getId().longValue() == cfps.longValue())
+					.findAny();
+			if (cfpsOp.isPresent()) {
+				retorno.add(projeto);
+			}
+		});
+
+		if (retorno.isEmpty()) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 
-		projetos.forEach(projeto -> {
+		retorno.forEach(projeto -> {
 			atualizaCfpsPontoFuncao(projeto);
 		});
 
-		return new ResponseEntity<List<Projeto>>(projetos, HttpStatus.OK);
+		return new ResponseEntity<List<Projeto>>(retorno, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/projetos/{id}", method = RequestMethod.GET)
@@ -148,7 +158,6 @@ public class RestApiProjetoController {
 
 		return new ResponseEntity<List<Projeto>>(projetos, HttpStatus.OK);
 	}
-	
 
 	@RequestMapping(value = "/projetos/ia/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> calcularIA(@PathVariable("id") long id) {
@@ -160,9 +169,9 @@ public class RestApiProjetoController {
 			return new ResponseEntity<>(new CustomErrorType("Projeto with id " + id + " not found"),
 					HttpStatus.NOT_FOUND);
 		}
-		
+
 		Projeto calcularIA = projetoService.calcularIA(projeto);
-		
+
 		return new ResponseEntity<Projeto>(calcularIA, HttpStatus.OK);
 	}
 

@@ -55,23 +55,6 @@ public class RestApiMedicaoController {
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	@RequestMapping(value = "/projetos/{idProjeto}/cfps/{idCfps}medicoes", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<List<Medicao>> listAllMedicaosProjeto(@PathVariable("idCfps") Integer idCfps,
-			@PathVariable("idProjeto") long idProjeto) {
-
-		Projeto projeto = projetoService.findById(idProjeto);
-		if (projeto == null) {
-			logger.error("Projeto with id {} not found.", idProjeto);
-			return new ResponseEntity(new CustomErrorType("Medicao with projeto id " + idProjeto + " not found"),
-					HttpStatus.NOT_FOUND);
-		}
-		List<Medicao> medicao = medicaoService.findByProjeto(projeto).stream()
-				.filter(m -> m.getCfps().getId().intValue() == idCfps.intValue()).collect(Collectors.toList());
-
-		return new ResponseEntity<List<Medicao>>(medicao, HttpStatus.OK);
-	}
-
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping(value = "projetos/{idProjeto}/cfps/{idCfps}/medicoes/total", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<CFPS> totalMedicao(@PathVariable("idProjeto") long idProjeto,
 			@PathVariable("idCfps") long idCfps) {
@@ -123,7 +106,7 @@ public class RestApiMedicaoController {
 	}
 
 	@RequestMapping(value = "projetos/{idProjeto}/cfps/{idCfps}/medicoes", method = RequestMethod.GET)
-	public ResponseEntity<?> getCFPS(@PathVariable("idProjeto") long idProjeto, @PathVariable("idCfps") long idCfps) {
+	public ResponseEntity<?> getCFPS(@PathVariable("idProjeto") long idProjeto, @PathVariable("idCfps") Long idCfps) {
 		logger.info("Fetching CFPS with id {}", idCfps);
 
 		Projeto projeto = projetoService.findById(idProjeto);
@@ -133,11 +116,11 @@ public class RestApiMedicaoController {
 					HttpStatus.NOT_FOUND);
 		}
 
-		Optional<CFPS> opCfps = projeto.getCfpss().stream().filter(c -> c.getId().longValue() == idCfps).findAny();
+		Optional<CFPS> opCfps = projeto.getCfpss().stream().filter(c -> c.getId().longValue() == idCfps.doubleValue())
+				.findAny();
 		if (!opCfps.isPresent()) {
 			logger.error("CFPS with id {} not found.", idCfps);
-			return new ResponseEntity<>(new CustomErrorType("Medicao with CFPS id " + idCfps + " not found"),
-					HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>(new ArrayList<Medicao>(), HttpStatus.OK);
 		}
 
 		CFPS cfps = opCfps.get();
@@ -160,6 +143,8 @@ public class RestApiMedicaoController {
 	@RequestMapping(value = "medicoes", method = RequestMethod.POST)
 	public ResponseEntity<?> createMedicao(@RequestBody Medicao medicao, UriComponentsBuilder ucBuilder) {
 		logger.info("Creating Medicao : {}", medicao);
+
+		// medicao.getProjeto().setStatus(StatusProjetoEnum.CONTAGEM);
 
 		medicaoService.save(medicao);
 
