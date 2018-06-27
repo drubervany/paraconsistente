@@ -58,7 +58,7 @@ public class ProjetoServiceImpl implements ProjetoService {
 	}
 
 	public void updateProjeto(Projeto projeto) {
-		saveProjeto(projeto);
+		projetoDao.saveAndFlush(projeto);
 	}
 
 	public void deleteProjetoById(Long id) {

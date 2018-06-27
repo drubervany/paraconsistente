@@ -3,7 +3,6 @@ package br.com.paraconsistente.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import br.com.paraconsistente.enuns.StatusProjetoEnum;
 import br.com.paraconsistente.model.CFPS;
 import br.com.paraconsistente.model.Medicao;
 import br.com.paraconsistente.model.Projeto;
@@ -144,7 +144,9 @@ public class RestApiMedicaoController {
 	public ResponseEntity<?> createMedicao(@RequestBody Medicao medicao, UriComponentsBuilder ucBuilder) {
 		logger.info("Creating Medicao : {}", medicao);
 
-		// medicao.getProjeto().setStatus(StatusProjetoEnum.CONTAGEM);
+		Projeto projeto = projetoService.findById(medicao.getProjeto().getId());
+		projeto.setStatus(StatusProjetoEnum.CONTAGEM);
+		projetoService.updateProjeto(projeto);
 
 		medicaoService.save(medicao);
 
