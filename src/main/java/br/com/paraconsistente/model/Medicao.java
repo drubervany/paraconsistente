@@ -46,8 +46,10 @@ public class Medicao implements Serializable {
 	private Integer qtdeDados = 0;
 
 	private Integer qtdeRegistros = 0;
+	
+	public String bma;
 
-	private Integer totalPonfoFuncao = 0;
+	private Integer totalPontoFuncao = 0;
 
 	public Long getId() {
 		return id;
@@ -131,37 +133,93 @@ public class Medicao implements Serializable {
 		ce.put("1", 3);
 		ce.put("2", 4);
 		ce.put("3", 6);
-
-		List<Complexidade> complexidade = Arrays.asList(
-				new Complexidade(1, 1,
-						Arrays.asList(new TipoDados(1, 19, 1), new TipoDados(20, 50, 1), new TipoDados(51, 999, 2))),
-				new Complexidade(2, 5,
-						Arrays.asList(new TipoDados(1, 19, 1), new TipoDados(20, 50, 2), new TipoDados(51, 999, 3))),
-				new Complexidade(6, 999,
-						Arrays.asList(new TipoDados(1, 19, 2), new TipoDados(20, 50, 3), new TipoDados(51, 999, 3))));
-
-		complexidade.forEach(tipoRegistro -> {
-			if (this.qtdeRegistros >= tipoRegistro.inicio && this.qtdeRegistros <= tipoRegistro.fim) {
-
-				tipoRegistro.tipoDados.forEach(tipoDados -> {
-					if (this.qtdeDados >= tipoDados.inicio && this.qtdeDados <= tipoDados.fim) {
-
-						if ("ALI".equals(this.tipo.name())) {
-							this.totalPonfoFuncao = ali.get(tipoDados.resultado.toString());
-						} else if ("AIE".equals(this.tipo.name())) {
-							this.totalPonfoFuncao = aie.get(tipoDados.resultado.toString());
-						} else if ("EE".equals(this.tipo.name())) {
-							this.totalPonfoFuncao = ee.get(tipoDados.resultado.toString());
-						} else if ("SE".equals(this.tipo.name())) {
-							this.totalPonfoFuncao = se.get(tipoDados.resultado.toString());
-						} else if ("CE".equals(this.tipo.name())) {
-							this.totalPonfoFuncao = ce.get(tipoDados.resultado.toString());
+		
+		if (("ALI".equals(this.tipo.name())) || ("AIE".equals(this.tipo.name()))) {	
+			
+			List<Complexidade> complexidadealiaie = Arrays.asList(
+					new Complexidade(1, 1,
+							Arrays.asList(new TipoDados(1, 19, 1), new TipoDados(20, 50, 1), new TipoDados(51, 999, 2))),
+					new Complexidade(2, 5,
+							Arrays.asList(new TipoDados(1, 19, 1), new TipoDados(20, 50, 2), new TipoDados(51, 999, 3))),
+					new Complexidade(6, 999,
+							Arrays.asList(new TipoDados(1, 19, 2), new TipoDados(20, 50, 3), new TipoDados(51, 999, 3))));
+	
+			complexidadealiaie.forEach(tipoRegistro -> {
+				if (this.qtdeRegistros >= tipoRegistro.inicio && this.qtdeRegistros <= tipoRegistro.fim) {
+	
+					tipoRegistro.tipoDados.forEach(tipoDados -> {
+						if (this.qtdeDados >= tipoDados.inicio && this.qtdeDados <= tipoDados.fim) {
+	
+							if ("ALI".equals(this.tipo.name())) {
+								this.totalPontoFuncao = ali.get(tipoDados.resultado.toString());
+							} else if ("AIE".equals(this.tipo.name())) {
+								this.totalPontoFuncao = aie.get(tipoDados.resultado.toString());
+							}
+							
+							if (tipoDados.resultado.toString() == "1") {
+								this.bma = "B";
+							} else if (tipoDados.resultado.toString() == "2") {
+								this.bma = "M";
+							} else if (tipoDados.resultado.toString() == "3") {
+								this.bma = "A";
+							}
+										
 						}
-					}
-				});
-			}
-		});
-		return this.totalPonfoFuncao;
+					});
+				}
+			});
+		}
+		
+		if (("CE".equals(this.tipo.name())) || ("SE".equals(this.tipo.name()))) {	
+			
+			List<Complexidade> Complexidadecese = Arrays.asList(
+					new Complexidade(0, 1,
+							Arrays.asList(new TipoDados(1, 5, 1), new TipoDados(6, 19, 1), new TipoDados(20, 999, 2))),
+					new Complexidade(2, 3,
+							Arrays.asList(new TipoDados(1, 5, 1), new TipoDados(6, 19, 2), new TipoDados(20, 999, 3))),
+					new Complexidade(4, 999,
+							Arrays.asList(new TipoDados(1, 5, 2), new TipoDados(6, 19, 3), new TipoDados(20, 999, 3))));
+	
+			Complexidadecese.forEach(tipoRegistro -> {
+				if (this.qtdeRegistros >= tipoRegistro.inicio && this.qtdeRegistros <= tipoRegistro.fim) {
+	
+					tipoRegistro.tipoDados.forEach(tipoDados -> {
+						if (this.qtdeDados >= tipoDados.inicio && this.qtdeDados <= tipoDados.fim) {
+	
+							if ("SE".equals(this.tipo.name())) {
+								this.totalPontoFuncao = se.get(tipoDados.resultado.toString());
+							} else if ("CE".equals(this.tipo.name())) {
+								this.totalPontoFuncao = ce.get(tipoDados.resultado.toString());
+							}
+						}
+					});
+				}
+			});
+		}
+
+		if ("EE".equals(this.tipo.name()))  {	
+			
+			List<Complexidade> Complexidadee = Arrays.asList(
+					new Complexidade(0, 1,
+							Arrays.asList(new TipoDados(1, 4, 1), new TipoDados(5, 15, 1), new TipoDados(16, 999, 2))),
+					new Complexidade(2, 2,
+							Arrays.asList(new TipoDados(1, 4, 1), new TipoDados(5, 15, 2), new TipoDados(16, 999, 3))),
+					new Complexidade(3, 999,
+							Arrays.asList(new TipoDados(1, 4, 2), new TipoDados(5, 15, 3), new TipoDados(16, 999, 3))));
+	
+			Complexidadee.forEach(tipoRegistro -> {
+				if (this.qtdeRegistros >= tipoRegistro.inicio && this.qtdeRegistros <= tipoRegistro.fim) {
+	
+					tipoRegistro.tipoDados.forEach(tipoDados -> {
+						if (this.qtdeDados >= tipoDados.inicio && this.qtdeDados <= tipoDados.fim) {
+								this.totalPontoFuncao = ee.get(tipoDados.resultado.toString());
+						}
+					});
+				}
+			});
+		}
+		
+		return this.totalPontoFuncao;
 	}
 
 	public StatusMedicaoEnum getStatus() {
